@@ -1,21 +1,11 @@
-import {
-  AlertCircle,
-  Building2,
-  Eye,
-  Pencil,
-  UserRound,
-  Users,
-  WalletMinimal,
-} from 'lucide-react';
+import { AlertCircle, Calendar, Clipboard, Trophy, Repeat } from "lucide-react";
 
 export const ICONS = {
-  'alert-circle': AlertCircle,
-  'building-2': Building2,
-  eye: Eye,
-  pencil: Pencil,
-  users: Users,
-  'user-round': UserRound,
-  'wallet-minimal': WalletMinimal,
+  "alert-circle": AlertCircle,
+  calendar: Calendar,
+  clipboard: Clipboard,
+  trophy: Trophy,
+  repeat: Repeat,
 } as const;
 
 export type IconName = keyof typeof ICONS;

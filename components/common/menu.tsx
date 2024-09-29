@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-
 import Link from "next/link";
 import {
   NavigationMenu,
@@ -9,11 +8,13 @@ import {
   NavigationMenuList,
 } from "../ui/navigation-menu";
 import { usePathname } from "next/navigation";
+import { Icon } from "./icon";
 
 export const menuItems = [
-  { label: "Semaines", path: "/semaines" },
-  { label: "Emplois du temps", path: "/planning" },
-  { label: "Activités", path: "/activites" },
+  { label: "Semaines", path: "/semaines", icon: "calendar" },
+  { label: "Plannings", path: "/planning", icon: "clipboard" },
+  { label: "Activités", path: "/activites", icon: "trophy" },
+  { label: "Passation", path: "/passation", icon: "repeat" },
 ] as const;
 
 export const Menu = () => {
@@ -28,11 +29,13 @@ export const Menu = () => {
                 <Link
                   href={item.path}
                   className={cn(
-                    "text-white hover:text-gray-300 p-2 rounded",
+                    "text-white hover:text-gray-300 p-2 rounded flex flex-col items-center",
                     pathname === item.path ? "bg-gray-700" : ""
                   )}
                 >
-                  {item.label}
+                  <Icon name={item.icon} className="w-6 h-6 md:hidden" />
+
+                  <span className="hidden md:inline">{item.label}</span>
                 </Link>
               </NavigationMenuItem>
             ))}
