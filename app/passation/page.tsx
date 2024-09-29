@@ -10,7 +10,7 @@ const leonardItems = [
 
 const lucasItems = [
   "Affaire foot",
-  "Tel + chargeur",
+  "Chargeur téléphone",
   "Affaire classe",
   "Chaussure danse",
 ];

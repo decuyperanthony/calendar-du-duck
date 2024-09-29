@@ -14,8 +14,8 @@ type GenericTabsProps = {
 
 export const GenericTabs = ({ tabs, defaultTab }: GenericTabsProps) => {
   return (
-    <Tabs defaultValue={defaultTab ?? tabs[0]?.value} className="w-full">
-      <TabsList className="flex justify-center">
+    <Tabs defaultValue={defaultTab ?? tabs[0]?.value}>
+      <TabsList>
         {tabs.map((tab) => (
           <TabsTrigger key={tab.value} value={tab.value}>
             {tab.label}

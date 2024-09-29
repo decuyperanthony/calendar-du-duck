@@ -4,7 +4,7 @@ import { GenericTabs } from "@/components/common/generic-tabs";
 const activitiesLucas = [
   { activity: "Foot - Entrainement", date: "Lundi 17H30 à 19H" },
   { activity: "Basket - Entrainement", date: "Mercredi 13H à 14H30" },
-  { activity: "Foot - Match", date: "Samedi 12H à 13H30" },
+  { activity: "Foot - Match", date: "Samedi" },
   { activity: "Ping pong - Entrainement", date: "Samedi 16H30 à 18H" },
   { activity: "Foot - Entrainement", date: "Dimanche 12H à 13H30" },
 ];
@@ -48,6 +48,6 @@ const tabs = [
   },
 ];
 
-const Page = () => <GenericTabs tabs={tabs} defaultTab="lucas" />;
+const Page = () => <GenericTabs tabs={tabs} defaultTab="leonard" />;
 
 export default Page;
