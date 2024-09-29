@@ -11,7 +11,7 @@ const activitiesLucas = [
 
 const activitiesLeonard = [
   { activity: "Tennis - Entrainement", date: "Lundi 18H à 19H" },
-  { activity: "Basket - Entrainement", date: "Mercredi 14H30 à 17H" },
+  { activity: "Basket - Entrainement", date: "Mercredi 14H30 à 16H" },
   { activity: "Ping pong - Entrainement", date: "Samedi 16H30 à 18H" },
 ];
 
