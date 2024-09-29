@@ -1,3 +1,5 @@
-export default function Home() {
-  return <div className="">hello</div>;
-}
+import { redirect } from "next/navigation";
+
+const Page = () => redirect("/semaines");
+
+export default Page;

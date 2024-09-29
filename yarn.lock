@@ -278,12 +278,41 @@
   dependencies:
     "@radix-ui/react-slot" "1.1.0"
 
-"@radix-ui/react-slot@1.1.0":
+"@radix-ui/react-roving-focus@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-roving-focus/-/react-roving-focus-1.1.0.tgz#b30c59daf7e714c748805bfe11c76f96caaac35e"
+  integrity sha512-EA6AMGeq9AEeQDeSH0aZgG198qkfHSbvWTf1HvoDmOB5bBG/qTxjYMWUKMnYiV6J/iP/J8MEFSuB2zRU2n7ODA==
+  dependencies:
+    "@radix-ui/primitive" "1.1.0"
+    "@radix-ui/react-collection" "1.1.0"
+    "@radix-ui/react-compose-refs" "1.1.0"
+    "@radix-ui/react-context" "1.1.0"
+    "@radix-ui/react-direction" "1.1.0"
+    "@radix-ui/react-id" "1.1.0"
+    "@radix-ui/react-primitive" "2.0.0"
+    "@radix-ui/react-use-callback-ref" "1.1.0"
+    "@radix-ui/react-use-controllable-state" "1.1.0"
+
+"@radix-ui/react-slot@1.1.0", "@radix-ui/react-slot@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-slot/-/react-slot-1.1.0.tgz#7c5e48c36ef5496d97b08f1357bb26ed7c714b84"
   integrity sha512-FUCf5XMfmW4dtYl69pdS4DbxKy8nj4M7SafBgPllysxmdachynNflAdp/gCsnYWNDnge6tI9onzMp5ARYc1KNw==
   dependencies:
     "@radix-ui/react-compose-refs" "1.1.0"
+
+"@radix-ui/react-tabs@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-tabs/-/react-tabs-1.1.0.tgz#0a6db1caed56776a1176aae68532060e301cc1c0"
+  integrity sha512-bZgOKB/LtZIij75FSuPzyEti/XBhJH52ExgtdVqjCIh+Nx/FW+LhnbXtbCzIi34ccyMsyOja8T0thCzoHFXNKA==
+  dependencies:
+    "@radix-ui/primitive" "1.1.0"
+    "@radix-ui/react-context" "1.1.0"
+    "@radix-ui/react-direction" "1.1.0"
+    "@radix-ui/react-id" "1.1.0"
+    "@radix-ui/react-presence" "1.1.0"
+    "@radix-ui/react-primitive" "2.0.0"
+    "@radix-ui/react-roving-focus" "1.1.0"
+    "@radix-ui/react-use-controllable-state" "1.1.0"
 
 "@radix-ui/react-use-callback-ref@1.1.0":
   version "1.1.0"
@@ -718,7 +747,7 @@ chalk@^4.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chokidar@^3.5.3:
+chokidar@^3.5.3, chokidar@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.6.0.tgz#197c6cc669ef2a8dc5e7b4d97ee4e092c3eb0d5b"
   integrity sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==
@@ -827,6 +856,11 @@ data-view-byte-offset@^1.0.0:
     call-bind "^1.0.6"
     es-errors "^1.3.0"
     is-data-view "^1.0.1"
+
+dayjs@^1.11.13:
+  version "1.11.13"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.13.tgz#92430b0139055c3ebb60150aa13e860a4b5a366c"
+  integrity sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==
 
 debug@^3.2.7:
   version "3.2.7"
@@ -2026,6 +2060,13 @@ next@14.2.13:
     "@next/swc-win32-ia32-msvc" "14.2.13"
     "@next/swc-win32-x64-msvc" "14.2.13"
 
+nextjs-routes@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/nextjs-routes/-/nextjs-routes-2.2.1.tgz#190b0a688bdcf0463be61b0708465b2375e26d57"
+  integrity sha512-j2A/XSQ8vDdtKl0sH6Q0msf8yIi9nO5RRtMAcSim/aTQaw9D19O9QnkDNvcliRQU1idCtAAFxnscNQuF5AjuLg==
+  dependencies:
+    chokidar "^3.6.0"
+
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
@@ -2302,6 +2343,11 @@ react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-medium-image-zoom@^5.2.10:
+  version "5.2.10"
+  resolved "https://registry.yarnpkg.com/react-medium-image-zoom/-/react-medium-image-zoom-5.2.10.tgz#5e913804bc282a165b18d46a06aa3035bcc7b946"
+  integrity sha512-JBYf4u0zsocezIDtrjwStD+8sX+c8XuLsdz+HxPbojRj0sCicua0XOQKysuPetoFyX+YgStfj+vEtZ+699O/pg==
 
 react@^18:
   version "18.3.1"

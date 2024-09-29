@@ -1,4 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+import nextRoutes from "nextjs-routes/config";
 
-export default nextConfig;
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {},
+};
+
+export default nextRoutes()(nextConfig);

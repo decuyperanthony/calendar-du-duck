@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import { Menu } from "@/components/common/menu";
-import { Header } from "@/components/common/header";
+// import { Header } from "@/components/common/header";
 
 export const metadata: Metadata = {
   title: "Léo et Lucky",
@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="fr">
       <body className="bg-gray-100">
         <div className="flex flex-col h-screen">
-          <Header />
+          {/* <Header /> */}
           <Menu />
           <main className="flex-1 p-6 bg-white shadow-sm">{children}</main>
         </div>

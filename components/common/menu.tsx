@@ -10,11 +10,11 @@ import {
 } from "../ui/navigation-menu";
 import { usePathname } from "next/navigation";
 
-const menuItems = [
-  { label: "Calendrier", path: "/calendrier" },
+export const menuItems = [
   { label: "Semaines", path: "/semaines" },
-  { label: "Planning", path: "/planning" },
-];
+  { label: "Emplois du temps", path: "/planning" },
+  { label: "Activités", path: "/activites" },
+] as const;
 
 export const Menu = () => {
   const pathname = usePathname();
