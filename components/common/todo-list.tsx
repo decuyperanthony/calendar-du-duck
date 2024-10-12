@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Checkbox } from "../ui/checkbox";
 
 type TodoItem = {
   label: string;
@@ -21,16 +22,21 @@ const TodoList = ({ items }: TodoListProps) => {
   };
 
   return (
-    <ul>
+    <ul className="space-y-4">
       {todos.map((item, index) => (
-        <li key={index} className="flex items-center mb-2">
-          <input
-            type="checkbox"
+        <li key={index} className="flex items-center gap-4">
+          <Checkbox
+            id={`todo-${index}`}
             checked={item.checked}
-            onChange={() => toggleCheck(index)}
-            className="mr-2 size-8"
+            onCheckedChange={() => toggleCheck(index)}
+            className="size-5"
           />
-          <span>{item.label}</span>
+          <label
+            htmlFor={`todo-${index}`}
+            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            {item.label}
+          </label>
         </li>
       ))}
     </ul>

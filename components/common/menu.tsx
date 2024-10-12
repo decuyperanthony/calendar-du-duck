@@ -15,6 +15,7 @@ export const menuItems = [
   { label: "Plannings", path: "/planning", icon: "clipboard" },
   { label: "Activités", path: "/activites", icon: "trophy" },
   { label: "Passation", path: "/passation", icon: "repeat" },
+  { label: "Heure d'arrivée", path: "/school-schedule", icon: "timer" },
 ] as const;
 
 export const Menu = () => {
@@ -28,7 +29,7 @@ export const Menu = () => {
               <Link
                 href={item.path}
                 className={cn(
-                  "text-white hover:text-gray-300 py-2 rounded flex flex-col items-center px-6",
+                  "text-white hover:text-gray-300 py-2 rounded flex flex-col items-center px-4",
                   pathname === item.path ? "bg-gray-700" : ""
                 )}
                 aria-selected={pathname === item.path}

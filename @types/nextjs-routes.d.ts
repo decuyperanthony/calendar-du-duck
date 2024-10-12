@@ -15,6 +15,7 @@ declare module "nextjs-routes" {
     | StaticRoute<"/activites">
     | StaticRoute<"/passation">
     | StaticRoute<"/planning">
+    | StaticRoute<"/school-schedule">
     | StaticRoute<"/semaines">;
 
   interface StaticRoute<Pathname> {
