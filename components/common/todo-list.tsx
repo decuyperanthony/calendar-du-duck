@@ -1,7 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Checkbox } from "../ui/checkbox";
+
+import { CustomCheckbox } from "./custom-checkbox";
+
+import { SimpleCard } from "./simple-card";
 
 type TodoItem = {
   label: string;
@@ -22,24 +25,20 @@ const TodoList = ({ items }: TodoListProps) => {
   };
 
   return (
-    <ul className="space-y-4">
-      {todos.map((item, index) => (
-        <li key={index} className="flex items-center gap-4">
-          <Checkbox
-            id={`todo-${index}`}
-            checked={item.checked}
-            onCheckedChange={() => toggleCheck(index)}
-            className="size-5"
-          />
-          <label
-            htmlFor={`todo-${index}`}
-            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            {item.label}
-          </label>
-        </li>
-      ))}
-    </ul>
+    <SimpleCard>
+      <ul className="space-y-4">
+        {todos.map((item, index) => (
+          <li key={index}>
+            <CustomCheckbox
+              id={`todo-${index}`}
+              checked={item.checked}
+              onCheckedChange={() => toggleCheck(index)}
+              label={item.label}
+            />
+          </li>
+        ))}
+      </ul>
+    </SimpleCard>
   );
 };
 

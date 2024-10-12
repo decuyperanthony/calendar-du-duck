@@ -7,7 +7,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { SimpleCard } from "@/components/common/simple-card";
 
 const scheduleData = [
   { courseTime: "8h00", arrivalTime: "7h58", label: "Cours" },
@@ -25,31 +25,29 @@ const scheduleData = [
 
 const Page = () => {
   return (
-    <Card className="w-full max-w-2xl mx-auto">
-      <CardHeader>
-        <CardTitle>Emploi du Temps Scolaire</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Heure de Cours</TableHead>
-              <TableHead>Heure d&apos;Arrivée</TableHead>
-              <TableHead>Label</TableHead>
+    <SimpleCard
+      title="Emploi du Temps Scolaire"
+      className="w-full max-w-2xl mx-auto"
+    >
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Heure de Cours</TableHead>
+            <TableHead>Heure d&apos;Arrivée</TableHead>
+            <TableHead>Label</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {scheduleData.map(({ courseTime, arrivalTime, label }, index) => (
+            <TableRow key={`school-schedule__s${index}__${arrivalTime}`}>
+              <TableCell>{courseTime}</TableCell>
+              <TableCell>{arrivalTime}</TableCell>
+              <TableCell>{label}</TableCell>
             </TableRow>
-          </TableHeader>
-          <TableBody>
-            {scheduleData.map(({ courseTime, arrivalTime, label }, index) => (
-              <TableRow key={`school-schedule__s${index}__${arrivalTime}`}>
-                <TableCell>{courseTime}</TableCell>
-                <TableCell>{arrivalTime}</TableCell>
-                <TableCell>{label}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </CardContent>
-    </Card>
+          ))}
+        </TableBody>
+      </Table>
+    </SimpleCard>
   );
 };
 

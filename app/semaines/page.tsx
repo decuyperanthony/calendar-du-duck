@@ -1,6 +1,7 @@
 "use client";
 
 import { SimpleAlert } from "@/components/common/simple-alert";
+import { SimpleCard } from "@/components/common/simple-card";
 import { Input } from "@/components/ui/input";
 import { getWeekType, WeekType } from "@/utils/week-utils";
 import { ChangeEvent, useState } from "react";
@@ -27,10 +28,8 @@ const Page = () => {
   };
 
   return (
-    <div className="flex flex-col gap-4">
-      <h1 className="text-2xl font-semibold">Calcul de Garde</h1>
-
-      <div className="flex flex-col items-center space-y-4 w-full max-w-md">
+    <SimpleCard title="Calcul de garde" className="w-full max-w-2xl mx-auto">
+      <div className="space-y-4">
         <Input
           type="date"
           onChange={handleDateChange}
@@ -45,7 +44,7 @@ const Page = () => {
           />
         )}
       </div>
-    </div>
+    </SimpleCard>
   );
 };
 
