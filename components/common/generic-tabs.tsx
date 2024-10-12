@@ -22,7 +22,7 @@ export const GenericTabs = ({ tabs, defaultTab }: GenericTabsProps) => {
           </TabsTrigger>
         ))}
       </TabsList>
-      <div className="mt-4">
+      <div className="mt-6">
         {tabs.map((tab) => (
           <TabsContent key={tab.value} value={tab.value}>
             {tab.content}

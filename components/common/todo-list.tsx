@@ -2,6 +2,10 @@
 
 import { useState } from "react";
 
+import { CustomCheckbox } from "./custom-checkbox";
+
+import { SimpleCard } from "./simple-card";
+
 type TodoItem = {
   label: string;
   checked: boolean;
@@ -21,19 +25,20 @@ const TodoList = ({ items }: TodoListProps) => {
   };
 
   return (
-    <ul>
-      {todos.map((item, index) => (
-        <li key={index} className="flex items-center mb-2">
-          <input
-            type="checkbox"
-            checked={item.checked}
-            onChange={() => toggleCheck(index)}
-            className="mr-2 size-8"
-          />
-          <span>{item.label}</span>
-        </li>
-      ))}
-    </ul>
+    <SimpleCard>
+      <ul className="space-y-4">
+        {todos.map((item, index) => (
+          <li key={index}>
+            <CustomCheckbox
+              id={`todo-${index}`}
+              checked={item.checked}
+              onCheckedChange={() => toggleCheck(index)}
+              label={item.label}
+            />
+          </li>
+        ))}
+      </ul>
+    </SimpleCard>
   );
 };
 
