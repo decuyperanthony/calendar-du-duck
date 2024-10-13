@@ -1,6 +1,7 @@
+import { cn } from "@/lib/utils";
 import { Checkbox } from "../ui/checkbox";
 
-type CustomCheckboxProps = {
+type Props = {
   id: string;
   checked: boolean;
   onCheckedChange: () => void;
@@ -12,7 +13,7 @@ export const CustomCheckbox = ({
   checked,
   onCheckedChange,
   label,
-}: CustomCheckboxProps) => {
+}: Props) => {
   return (
     <div className="flex items-center gap-3">
       <Checkbox
@@ -23,7 +24,10 @@ export const CustomCheckbox = ({
       />
       <label
         htmlFor={id}
-        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        className={cn(
+          "text-sm font-medium leading-none",
+          "peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        )}
       >
         {label}
       </label>

@@ -1,8 +1,8 @@
-import nextRoutes from "nextjs-routes/config";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {},
-};
+const nextConfig = {};
 
-export default nextRoutes()(nextConfig);
+export default withNextIntl(nextConfig);

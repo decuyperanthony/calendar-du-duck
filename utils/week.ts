@@ -13,3 +13,5 @@ export const getWeekType = (date: string) => {
 
   return weekType;
 };
+
+export const today = dayjs().toISOString().split("T")[0];
