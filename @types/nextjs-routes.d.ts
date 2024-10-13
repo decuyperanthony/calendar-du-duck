@@ -13,9 +13,9 @@ declare module "nextjs-routes" {
   export type Route =
     | StaticRoute<"/">
     | StaticRoute<"/activites">
+    | StaticRoute<"/heure-arrivee">
     | StaticRoute<"/passation">
     | StaticRoute<"/planning">
-    | StaticRoute<"/school-schedule">
     | StaticRoute<"/semaines">;
 
   interface StaticRoute<Pathname> {

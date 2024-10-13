@@ -1,0 +1,23 @@
+{
+  "school-schedule": {
+    "class": "Cours",
+    "title": "Titre",
+    "arrival": "Arrivée",
+    "lunch": "Déjeuner",
+    "arrival-hour": "Heure d'arrivée en cours"
+  },
+  "passation": {
+    "leonard": {
+      "athletics-gear": "Affaire athlétisme",
+      "class-items": "Affaires classe",
+      "tennis-racket": "Raquette tennis",
+      "pingpong-racket": "Raquette ping pong"
+    },
+    "lucas": {
+      "football-gear": "Affaire foot",
+      "phone-charger": "Chargeur téléphone",
+      "class-items": "Affaire classe",
+      "dance-shoes": "Chaussure danse"
+    }
+  }
+}

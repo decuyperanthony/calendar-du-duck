@@ -27,13 +27,13 @@ const TodoList = ({ items }: TodoListProps) => {
   return (
     <SimpleCard>
       <ul className="space-y-4">
-        {todos.map((item, index) => (
+        {todos.map(({ label, checked }, index) => (
           <li key={index}>
             <CustomCheckbox
-              id={`todo-${index}`}
-              checked={item.checked}
+              id={`todo__${label}__${index}`}
+              checked={checked}
               onCheckedChange={() => toggleCheck(index)}
-              label={item.label}
+              label={label}
             />
           </li>
         ))}

@@ -6,15 +6,13 @@ const tabs = [
     label: "Léonard",
     value: "leonard",
     content: (
-      <FullScreenImage imageKey="planning-leonard" alt="Planning de Léonard" />
+      <FullScreenImage image="planning-leonard" alt="Planning de Léonard" />
     ),
   },
   {
     label: "Lucas",
     value: "lucas",
-    content: (
-      <FullScreenImage imageKey="planning-lucas" alt="Planning de Lucas" />
-    ),
+    content: <FullScreenImage image="planning-lucas" alt="Planning de Lucas" />,
   },
 ];
 
