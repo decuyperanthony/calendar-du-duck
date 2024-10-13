@@ -3,8 +3,10 @@
 import { SimpleAlert } from "@/components/common/simple-alert";
 import { SimpleCard } from "@/components/common/simple-card";
 import { Input } from "@/components/ui/input";
-import { getWeekType, WeekType } from "@/utils/week-utils";
+import { getWeekType, today, WeekType } from "@/utils";
 import { ChangeEvent, useState } from "react";
+
+// TODO use trads
 
 const gardeMapping = {
   EVEN: "Anthony",
@@ -17,7 +19,7 @@ const weekInfoMapping = {
 } as const;
 
 const Page = () => {
-  const [weekType, setWeekType] = useState<WeekType>();
+  const [weekType, setWeekType] = useState<WeekType>(getWeekType(today));
 
   const handleDateChange = (e: ChangeEvent<HTMLInputElement>) => {
     const date = e.target.value;
@@ -35,6 +37,7 @@ const Page = () => {
           onChange={handleDateChange}
           className="w-full"
           placeholder="Choisir une date"
+          defaultValue={today}
         />
 
         {weekType && (

@@ -1,0 +1,11 @@
+[
+  { "courseTime": "8h00", "arrivalTime": "7h57", "label": "Cours" },
+  { "courseTime": "8h58", "arrivalTime": "8h55", "label": "Cours" },
+  { "courseTime": "10h08", "arrivalTime": "10h05", "label": "Cours" },
+  { "courseTime": "11h06", "arrivalTime": "11h03", "label": "Cours" },
+  { "courseTime": "12h01", "arrivalTime": "11h58", "label": "Déjeuner" },
+  { "courseTime": "13h21", "arrivalTime": "13h18", "label": "Cours" },
+  { "courseTime": "14h29", "arrivalTime": "14h26", "label": "Cours" },
+  { "courseTime": "15h39", "arrivalTime": "15h36", "label": "Cours" },
+  { "courseTime": "16h37", "arrivalTime": "16h34", "label": "Cours" }
+]

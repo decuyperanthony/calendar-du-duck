@@ -15,7 +15,7 @@ export const menuItems = [
   { label: "Plannings", path: "/planning", icon: "clipboard" },
   { label: "Activités", path: "/activites", icon: "trophy" },
   { label: "Passation", path: "/passation", icon: "repeat" },
-  { label: "Heure d'arrivée", path: "/school-schedule", icon: "timer" },
+  { label: "Heure d'arrivée", path: "/heure-arrivee", icon: "timer" },
 ] as const;
 
 export const Menu = () => {

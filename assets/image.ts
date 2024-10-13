@@ -3,4 +3,4 @@ export const images = {
   "planning-lucas": "/images/planning-lucas.png",
 };
 
-export type ImageKey = keyof typeof images;
+export type image = keyof typeof images;
