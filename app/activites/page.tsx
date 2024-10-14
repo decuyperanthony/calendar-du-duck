@@ -10,7 +10,6 @@ const tabs = [
     label: "Léonard",
     value: "leonard",
     content: (
-      // todo refactor with activity card wrapper
       <div className="space-y-2">
         {leonard.map((activity, index) => (
           <ActivityCard
