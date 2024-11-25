@@ -10,6 +10,8 @@ const Page = () => {
     t("leonard.class-items"),
     t("leonard.tennis-racket"),
     t("leonard.pingpong-racket"),
+    // todo refactor into common
+    t("lucas.phone-charger"),
   ];
 
   const lucasItems = [
