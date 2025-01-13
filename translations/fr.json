@@ -8,7 +8,7 @@
   },
   "passation": {
     "leonard": {
-      "athletics-gear": "Affaire athlétisme",
+      "shoes": "Chaussures",
       "class-items": "Affaires classe",
       "tennis-racket": "Raquette tennis",
       "pingpong-racket": "Raquette ping pong"
@@ -16,6 +16,7 @@
     "lucas": {
       "football-gear": "Affaire foot",
       "phone-charger": "Chargeur téléphone",
+      "eastpak": "Sac à dos eastpak",
       "class-items": "Affaire classe",
       "dance-shoes": "Chaussure danse"
     }

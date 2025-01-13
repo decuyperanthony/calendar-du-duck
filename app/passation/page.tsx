@@ -6,8 +6,10 @@ const Page = () => {
   const t = useScoped18n("passation");
 
   const leonardItems = [
-    t("leonard.athletics-gear"),
+    // todo refactor into common
+    t("lucas.eastpak"),
     t("leonard.class-items"),
+    t("leonard.shoes"),
     t("leonard.tennis-racket"),
     t("leonard.pingpong-racket"),
     // todo refactor into common
@@ -15,9 +17,10 @@ const Page = () => {
   ];
 
   const lucasItems = [
+    t("lucas.eastpak"),
+    t("lucas.class-items"),
     t("lucas.football-gear"),
     t("lucas.phone-charger"),
-    t("lucas.class-items"),
     t("lucas.dance-shoes"),
   ];
 
