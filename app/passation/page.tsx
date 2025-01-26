@@ -12,6 +12,7 @@ const Page = () => {
     t("leonard.shoes"),
     t("leonard.tennis-racket"),
     t("leonard.pingpong-racket"),
+    t("leonard.hair-gel"),
     // todo refactor into common
     t("lucas.phone-charger"),
   ];
