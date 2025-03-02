@@ -8,18 +8,17 @@
   },
   "passation": {
     "leonard": {
-      "shoes": "Chaussures",
+      "eastpak": "Sac à dos eastpak",
       "class-items": "Affaires classe",
       "tennis-racket": "Raquette tennis",
       "pingpong-racket": "Raquette ping pong",
-      "hair-gel": "Gel pour les cheveux"
+      "phone-charger": "Chargeur téléphone"
     },
     "lucas": {
-      "football-gear": "Affaire foot",
-      "phone-charger": "Chargeur téléphone",
       "eastpak": "Sac à dos eastpak",
       "class-items": "Affaire classe",
-      "dance-shoes": "Chaussure danse"
+      "football-gear": "Affaire foot",
+      "phone-charger": "Chargeur téléphone"
     }
   }
 }

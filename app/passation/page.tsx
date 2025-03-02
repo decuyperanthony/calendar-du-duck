@@ -7,14 +7,13 @@ const Page = () => {
 
   const leonardItems = [
     // todo refactor into common
-    t("lucas.eastpak"),
+    t("leonard.eastpak"),
+    // todo refactor into common
     t("leonard.class-items"),
-    t("leonard.shoes"),
     t("leonard.tennis-racket"),
     t("leonard.pingpong-racket"),
-    t("leonard.hair-gel"),
     // todo refactor into common
-    t("lucas.phone-charger"),
+    t("leonard.phone-charger"),
   ];
 
   const lucasItems = [
@@ -22,7 +21,6 @@ const Page = () => {
     t("lucas.class-items"),
     t("lucas.football-gear"),
     t("lucas.phone-charger"),
-    t("lucas.dance-shoes"),
   ];
 
   const tabs = [
