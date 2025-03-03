@@ -20,6 +20,7 @@ const Page = () => {
     t("lucas.eastpak"),
     t("lucas.class-items"),
     t("lucas.football-gear"),
+    t("lucas.swimming-gear"),
     t("lucas.phone-charger"),
   ];
 
