@@ -10,18 +10,22 @@ const Page = () => {
     t("leonard.eastpak"),
     // todo refactor into common
     t("leonard.class-items"),
-    t("leonard.tennis-racket"),
+    // t("leonard.tennis-racket"),
     t("leonard.pingpong-racket"),
     // todo refactor into common
-    t("leonard.phone-charger"),
+    t("leonard.basket"),
+    t("leonard.germen-pull"),
+    // todo refactor into common
+    // t("leonard.phone-charger"),
   ];
 
   const lucasItems = [
     t("lucas.eastpak"),
     t("lucas.class-items"),
-    t("lucas.football-gear"),
+    // t("lucas.football-gear"),
     t("lucas.swimming-gear"),
-    t("lucas.phone-charger"),
+    t("lucas.basket"),
+    // t("lucas.phone-charger"),
   ];
 
   const tabs = [
