@@ -1,15 +1,8 @@
 import createNextIntlPlugin from "next-intl/plugin";
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  async rewrites() {
-    return [
-      {
-        source: "/.well-known/vercel/flags",
-        destination: "/api/vercel/flags",
-      },
-    ];
-  },
-};
+const withNextIntl = createNextIntlPlugin();
 
-export default createNextIntlPlugin()(nextConfig);
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
+export default withNextIntl(nextConfig);
