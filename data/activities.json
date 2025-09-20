@@ -1,15 +1,11 @@
 {
   "lucas": [
-    { "activity": "Foot - Entrainement", "date": "Lundi 17H30 à 19H" },
-    { "activity": "Basket - Entrainement", "date": "Mercredi 13H à 14H30" },
-    { "activity": "Foot - Entrainement", "date": "Jeudi 18H à 19H10" },
+    { "activity": "Foot - Entrainement", "date": "mardi 19H à 20H30" },
+    { "activity": "Foot - Entrainement", "date": "mercredi 16H30 à 18H" },
     { "activity": "Foot - Match", "date": "Samedi" },
-    { "activity": "Ping pong - Entrainement", "date": "Samedi 16H30 à 18H" },
-    { "activity": "Foot - Entrainement", "date": "Dimanche 12H à 13H30" }
+    { "activity": "Ping pong - Entrainement", "date": "Samedi 16H30 à 18H" }
   ],
   "leonard": [
-    { "activity": "Tennis - Entrainement", "date": "Lundi 18H à 19H" },
-    { "activity": "Basket - Entrainement", "date": "Mercredi 14H30 à 16H" },
     { "activity": "Ping pong - Entrainement", "date": "Samedi 16H30 à 18H" }
   ]
 }
