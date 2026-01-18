@@ -12,10 +12,10 @@ import { Icon } from "./icon";
 
 export const menuItems = [
   { label: "Semaines", path: "/semaines", icon: "calendar" },
-  { label: "Plannings", path: "/planning", icon: "clipboard" },
   { label: "Activités", path: "/activites", icon: "trophy" },
   { label: "Passation", path: "/passation", icon: "repeat" },
   { label: "Heure d'arrivée", path: "/heure-arrivee", icon: "timer" },
+  { label: "Plannings", path: "/planning", icon: "clipboard" },
 ] as const;
 
 export const Menu = () => {
