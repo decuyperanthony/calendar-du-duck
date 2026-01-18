@@ -1,26 +1,68 @@
 {
+  "common": {
+    "children": {
+      "leonard": "Léonard",
+      "lucas": "Lucas"
+    },
+    "nav": {
+      "weeks": "Semaines",
+      "planning": "Plannings",
+      "activities": "Activités",
+      "handover": "Passation",
+      "arrival-time": "Heure d'arrivée"
+    },
+    "week": {
+      "EVEN": "paire",
+      "ODD": "impaire",
+      "custody-title": "Calcul de garde",
+      "custody-message": "C'est la semaine de garde de {name}.",
+      "week-label": "Semaine {type}",
+      "choose-date": "Choisir une date"
+    }
+  },
   "school-schedule": {
     "class": "Cours",
     "title": "Titre",
     "arrival": "Arrivée",
-    "lunch": "Déjeuner",
-    "arrival-hour": "Heure d'arrivée en cours"
+    "arrival-hour": "Heure d'arrivée en cours",
+    "schedules": {
+      "1": { "courseTime": "8h00", "arrivalTime": "7h57", "label": "Cours" },
+      "2": { "courseTime": "8h58", "arrivalTime": "8h55", "label": "Cours" },
+      "3": { "courseTime": "10h08", "arrivalTime": "10h05", "label": "Cours" },
+      "4": { "courseTime": "11h06", "arrivalTime": "11h03", "label": "Cours" },
+      "5": { "courseTime": "12h01", "arrivalTime": "11h58", "label": "Déjeuner" },
+      "6": { "courseTime": "13h21", "arrivalTime": "13h18", "label": "Cours" },
+      "7": { "courseTime": "14h29", "arrivalTime": "14h26", "label": "Cours" },
+      "8": { "courseTime": "15h39", "arrivalTime": "15h36", "label": "Cours" },
+      "9": { "courseTime": "16h37", "arrivalTime": "16h34", "label": "Cours" }
+    }
   },
   "passation": {
-    "leonard": {
-      "eastpak": "Sac à dos eastpak",
+    "tabs": {
+      "leonard": "Léonard",
+      "lucas": "Lucas"
+    },
+    "items": {
+      "nike-shoes": "Chaussures Nike",
+      "gel": "Gel",
       "class-items": "Affaires classe",
-      "tennis-racket": "Raquette tennis",
-      "pingpong-racket": "Raquette ping pong",
-      "basket": "Basket Adidas",
-      "germen-pull": "Pull germen"
+      "basket-adidas": "Basket Adidas",
+      "football-gear": "Affaire foot"
+    }
+  },
+  "activities": {
+    "tabs": {
+      "leonard": "Léonard",
+      "lucas": "Lucas"
     },
     "lucas": {
-      "eastpak": "Sac à dos eastpak",
-      "class-items": "Affaire classe",
-      "football-gear": "Affaire foot",
-      "swimming-gear": "Affaire piscine",
-      "basket": "Basket Adidas"
+      "1": { "activity": "Foot - Entrainement", "date": "mardi 19H à 20H30" },
+      "2": { "activity": "Foot - Entrainement", "date": "mercredi 16H30 à 18H" },
+      "3": { "activity": "Foot - Match", "date": "Samedi" },
+      "4": { "activity": "Ping pong - Entrainement", "date": "Samedi 16H30 à 18H" }
+    },
+    "leonard": {
+      "1": { "activity": "Ping pong - Entrainement", "date": "Samedi 16H30 à 18H" }
     }
   }
 }
