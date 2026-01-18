@@ -1,13 +1,18 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Icon } from "./icon";
+import Image from "next/image";
 
 type CustodyHeroProps = {
   name: string;
   weekLabel: string;
   variant: "anthony" | "flora";
 };
+
+const avatars = {
+  anthony: "/images/anthony.jpg",
+  flora: "/images/flora.jpg",
+} as const;
 
 export const CustodyHero = ({ name, weekLabel, variant }: CustodyHeroProps) => {
   const isAnthony = variant === "anthony";
@@ -31,16 +36,23 @@ export const CustodyHero = ({ name, weekLabel, variant }: CustodyHeroProps) => {
       />
 
       <div className="relative flex flex-col items-center text-center gap-4">
-        {/* Icon */}
+        {/* Avatar */}
         <div
           className={cn(
-            "flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-2xl",
+            "relative h-24 w-24 md:h-32 md:w-32 rounded-full overflow-hidden",
+            "ring-4 shadow-xl",
             isAnthony
-              ? "bg-primary/20 text-primary"
-              : "bg-accent/20 text-accent"
+              ? "ring-primary/50 shadow-primary/20"
+              : "ring-accent/50 shadow-accent/20"
           )}
         >
-          <Icon name="calendar-check" size="xl" />
+          <Image
+            src={avatars[variant]}
+            alt={name}
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
 
         {/* Week type */}
