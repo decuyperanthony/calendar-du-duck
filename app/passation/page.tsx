@@ -2,46 +2,36 @@ import { GenericTabs } from "@/components/common/generic-tabs";
 import TodoList from "@/components/common/todo-list";
 import { useScoped18n } from "@/lib/next-intl";
 
+const toTodoItems = (labels: string[]) =>
+  labels.map((label) => ({ label, checked: false }));
+
 const Page = () => {
   const t = useScoped18n("passation");
 
   const leonardItems = [
-    // todo refactor into common
-    t("leonard.eastpak"),
-    // todo refactor into common
-    t("leonard.class-items"),
-    // t("leonard.pingpong-racket"),
-    // todo refactor into common
-    // t("leonard.basket"),
-    // t("leonard.germen-pull"),
+    t("items.nike-shoes"),
+    t("items.gel"),
+    t("items.class-items"),
+    t("items.basket-adidas"),
   ];
 
   const lucasItems = [
-    t("lucas.eastpak"),
-    t("lucas.class-items"),
-    t("lucas.football-gear"),
-    // t("lucas.swimming-gear"),
-    // t("lucas.basket"),
+    t("items.nike-shoes"),
+    t("items.gel"),
+    t("items.class-items"),
+    t("items.football-gear"),
   ];
 
   const tabs = [
     {
-      label: "Léonard",
+      label: t("tabs.leonard"),
       value: "leonard",
-      content: (
-        <TodoList
-          items={leonardItems.map((label) => ({ label, checked: false }))}
-        />
-      ),
+      content: <TodoList items={toTodoItems(leonardItems)} />,
     },
     {
-      label: "Lucas",
+      label: t("tabs.lucas"),
       value: "lucas",
-      content: (
-        <TodoList
-          items={lucasItems.map((label) => ({ label, checked: false }))}
-        />
-      ),
+      content: <TodoList items={toTodoItems(lucasItems)} />,
     },
   ];
 
