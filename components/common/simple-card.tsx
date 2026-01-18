@@ -6,15 +6,14 @@ type SimpleCardProps = ComponentPropsWithoutRef<"div"> & {
   title?: string;
 };
 
-export const SimpleCard = ({ children, title, ...props }: SimpleCardProps) => (
-  <Card {...props}>
-    {!!title && (
+export const SimpleCard = ({ children, title, className, ...props }: SimpleCardProps) => (
+  <Card className={cn("animate-in", className)} {...props}>
+    {title && (
       <CardHeader>
         <CardTitle>{title}</CardTitle>
       </CardHeader>
     )}
-
-    <CardContent className={cn({ "mt-6": !title })}>{children}</CardContent>
+    <CardContent className={cn({ "pt-5": !title })}>{children}</CardContent>
   </Card>
 );
 

@@ -1,4 +1,6 @@
-import { ReactNode } from "react";
+"use client";
+
+import { type ReactNode } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 
 type TabItem = {
@@ -14,7 +16,7 @@ type GenericTabsProps = {
 
 export const GenericTabs = ({ tabs, defaultTab }: GenericTabsProps) => {
   return (
-    <Tabs defaultValue={defaultTab ?? tabs[0]?.value}>
+    <Tabs defaultValue={defaultTab ?? tabs[0]?.value} className="w-full">
       <TabsList>
         {tabs.map((tab) => (
           <TabsTrigger key={tab.value} value={tab.value}>
@@ -22,7 +24,7 @@ export const GenericTabs = ({ tabs, defaultTab }: GenericTabsProps) => {
           </TabsTrigger>
         ))}
       </TabsList>
-      <div className="mt-6">
+      <div className="mt-6 space-y-3">
         {tabs.map((tab) => (
           <TabsContent key={tab.value} value={tab.value}>
             {tab.content}

@@ -19,11 +19,13 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className="bg-gray-100">
+      <body className="min-h-screen gradient-mesh">
         <NextIntlClientProvider messages={messages}>
-          <div className="flex flex-col h-screen">
+          <div className="flex min-h-screen flex-col">
             <Menu />
-            <main className="flex-1 p-6 bg-white shadow-sm">{children}</main>
+            <main className="flex-1 p-4 md:p-6 lg:p-8">
+              <div className="mx-auto max-w-4xl">{children}</div>
+            </main>
           </div>
         </NextIntlClientProvider>
       </body>
