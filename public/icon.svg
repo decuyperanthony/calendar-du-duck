@@ -4,40 +4,36 @@
       <stop offset="0%" style="stop-color:#2a0555"/>
       <stop offset="100%" style="stop-color:#1a0235"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2dd4bf"/>
+    <linearGradient id="teal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#5eead4"/>
       <stop offset="100%" style="stop-color:#14b8a6"/>
     </linearGradient>
-    <linearGradient id="purple" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#a855f7"/>
-      <stop offset="100%" style="stop-color:#7c3aed"/>
+    <linearGradient id="purple" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c084fc"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
     </linearGradient>
   </defs>
 
   <!-- Background -->
-  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="108" fill="url(#bg)"/>
 
   <!-- Left person (teal) -->
-  <g transform="translate(80, 140)">
-    <!-- Head -->
-    <circle cx="70" cy="50" r="40" fill="url(#accent)"/>
-    <!-- Body -->
-    <path d="M20 140 Q20 100 70 100 Q120 100 120 140 L120 200 Q120 220 100 220 L40 220 Q20 220 20 200 Z" fill="url(#accent)"/>
-  </g>
+  <circle cx="150" cy="175" r="45" fill="url(#teal)"/>
+  <rect x="95" y="235" width="110" height="130" rx="32" fill="url(#teal)"/>
 
   <!-- Right person (purple) -->
-  <g transform="translate(260, 140)">
-    <!-- Head -->
-    <circle cx="70" cy="50" r="40" fill="url(#purple)"/>
-    <!-- Body -->
-    <path d="M20 140 Q20 100 70 100 Q120 100 120 140 L120 200 Q120 220 100 220 L40 220 Q20 220 20 200 Z" fill="url(#purple)"/>
+  <circle cx="362" cy="175" r="45" fill="url(#purple)"/>
+  <rect x="307" y="235" width="110" height="130" rx="32" fill="url(#purple)"/>
+
+  <!-- Arrow right -->
+  <g fill="none" stroke="url(#teal)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="220" y1="260" x2="280" y2="260"/>
+    <polyline points="260,242 280,260 260,278"/>
   </g>
 
-  <!-- Arrows in the middle -->
-  <g transform="translate(200, 200)">
-    <!-- Arrow right (teal) -->
-    <path d="M30 30 L80 30 L65 15 M80 30 L65 45" stroke="url(#accent)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    <!-- Arrow left (purple) -->
-    <path d="M80 80 L30 80 L45 65 M30 80 L45 95" stroke="url(#purple)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Arrow left -->
+  <g fill="none" stroke="url(#purple)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="292" y1="320" x2="232" y2="320"/>
+    <polyline points="252,302 232,320 252,338"/>
   </g>
 </svg>
