@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a0555"/>
+      <stop offset="100%" style="stop-color:#1a0235"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#5eead4"/>
+      <stop offset="100%" style="stop-color:#14b8a6"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c084fc"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="108" fill="url(#bg)"/>
+
+  <!-- Left person (teal) -->
+  <circle cx="150" cy="175" r="45" fill="url(#teal)"/>
+  <rect x="95" y="235" width="110" height="130" rx="32" fill="url(#teal)"/>
+
+  <!-- Right person (purple) -->
+  <circle cx="362" cy="175" r="45" fill="url(#purple)"/>
+  <rect x="307" y="235" width="110" height="130" rx="32" fill="url(#purple)"/>
+
+  <!-- Arrow right -->
+  <g fill="none" stroke="url(#teal)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="220" y1="260" x2="280" y2="260"/>
+    <polyline points="260,242 280,260 260,278"/>
+  </g>
+
+  <!-- Arrow left -->
+  <g fill="none" stroke="url(#purple)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="292" y1="320" x2="232" y2="320"/>
+    <polyline points="252,302 232,320 252,338"/>
+  </g>
+</svg>
