@@ -1,6 +1,7 @@
 "use client";
 
 import { CustodyHero } from "@/components/common/custody-hero";
+import { Icon } from "@/components/common/icon";
 import { Input } from "@/components/ui/input";
 import { useScoped18n } from "@/lib/next-intl";
 import { getWeekType, today, WeekType } from "@/utils";
@@ -31,12 +32,19 @@ const Page = () => {
         <label className="block text-xs uppercase tracking-widest text-white/50 mb-2 font-medium">
           {t("choose-date")}
         </label>
-        <Input
-          type="date"
-          onChange={handleDateChange}
-          className="w-full"
-          defaultValue={today}
-        />
+        <div className="relative">
+          <Input
+            type="date"
+            onChange={handleDateChange}
+            className="w-full pr-12"
+            defaultValue={today}
+          />
+          <Icon
+            name="calendar"
+            size="md"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-primary pointer-events-none"
+          />
+        </div>
       </div>
 
       {/* Custody Hero - BIG and visible */}
