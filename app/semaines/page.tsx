@@ -43,6 +43,7 @@ const Page = () => {
       <CustodyHero
         name={garde.name}
         weekLabel={t("week-label", { type: t(weekType) })}
+        subtitle={t("custody-subtitle")}
         variant={garde.variant}
       />
     </div>

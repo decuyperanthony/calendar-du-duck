@@ -16,6 +16,7 @@
       "ODD": "impaire",
       "custody-title": "Calcul de garde",
       "custody-message": "C'est la semaine de garde de {name}.",
+      "custody-subtitle": "a la garde cette semaine",
       "week-label": "Semaine {type}",
       "choose-date": "Choisir une date"
     }

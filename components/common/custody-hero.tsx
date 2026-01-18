@@ -6,6 +6,7 @@ import Image from "next/image";
 type CustodyHeroProps = {
   name: string;
   weekLabel: string;
+  subtitle: string;
   variant: "anthony" | "flora";
 };
 
@@ -14,7 +15,7 @@ const avatars = {
   flora: "/images/flora.jpg",
 } as const;
 
-export const CustodyHero = ({ name, weekLabel, variant }: CustodyHeroProps) => {
+export const CustodyHero = ({ name, weekLabel, subtitle, variant }: CustodyHeroProps) => {
   const isAnthony = variant === "anthony";
 
   return (
@@ -72,7 +73,7 @@ export const CustodyHero = ({ name, weekLabel, variant }: CustodyHeroProps) => {
 
         {/* Subtitle */}
         <p className="text-white/50 text-sm">
-          a la garde cette semaine
+          {subtitle}
         </p>
       </div>
     </div>
