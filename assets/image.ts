@@ -4,3 +4,10 @@ export const images = {
 };
 
 export type image = keyof typeof images;
+
+export const avatars = {
+  anthony: "/images/anthony.jpg",
+  flora: "/images/flora.jpg",
+};
+
+export type avatar = keyof typeof avatars;

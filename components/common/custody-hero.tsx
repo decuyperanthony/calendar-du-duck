@@ -1,5 +1,6 @@
 "use client";
 
+import { avatars, type avatar } from "@/assets/image";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -7,13 +8,8 @@ type CustodyHeroProps = {
   name: string;
   weekLabel: string;
   subtitle: string;
-  variant: "anthony" | "flora";
+  variant: avatar;
 };
-
-const avatars = {
-  anthony: "/images/anthony.jpg",
-  flora: "/images/flora.jpg",
-} as const;
 
 export const CustodyHero = ({ name, weekLabel, subtitle, variant }: CustodyHeroProps) => {
   const isAnthony = variant === "anthony";
