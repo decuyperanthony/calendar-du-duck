@@ -35,8 +35,9 @@ export const Menu = () => {
                     href={item.path}
                     className={cn(
                       "group relative flex flex-col items-center gap-1.5 rounded-xl px-3 py-2.5 md:px-5 text-sm font-medium transition-all duration-300",
-                      "text-white/60 hover:text-white hover:bg-white/5",
-                      isActive && "text-primary bg-white/10"
+                      isActive
+                        ? "text-primary bg-white/10"
+                        : "text-white hover:bg-white/5"
                     )}
                     aria-selected={isActive}
                   >
@@ -48,21 +49,23 @@ export const Menu = () => {
                         "transition-all duration-300",
                         isActive
                           ? "text-primary scale-110"
-                          : "group-hover:scale-105 group-hover:text-white"
+                          : "text-white group-hover:scale-105"
                       )}
                     />
                     <span
                       className={cn(
                         "hidden md:block text-[10px] uppercase tracking-widest font-semibold transition-all duration-300",
-                        isActive ? "text-primary" : "text-white/50 group-hover:text-white/80"
+                        isActive ? "text-primary" : "text-white"
                       )}
                     >
                       {item.label}
                     </span>
                     <span
                       className={cn(
-                        "absolute -bottom-0.5 left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-primary transition-all duration-300",
-                        isActive ? "w-8 opacity-100" : "w-0 opacity-0 group-hover:w-4 group-hover:opacity-50"
+                        "absolute -bottom-0.5 left-1/2 h-0.5 -translate-x-1/2 rounded-full transition-all duration-300",
+                        isActive
+                          ? "w-8 opacity-100 bg-primary"
+                          : "w-4 opacity-60 bg-white group-hover:opacity-100"
                       )}
                     />
                   </Link>
