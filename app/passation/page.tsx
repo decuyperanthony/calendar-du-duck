@@ -9,17 +9,14 @@ const Page = () => {
   const t = useScoped18n("passation");
 
   const leonardItems = [
-    t("items.nike-shoes"),
     t("items.gel"),
     t("items.class-items"),
-    t("items.basket-adidas"),
+    t("items.new-balance"),
   ];
 
   const lucasItems = [
     t("items.nike-shoes"),
-    t("items.gel"),
     t("items.class-items"),
-    t("items.football-gear"),
   ];
 
   const tabs = [
