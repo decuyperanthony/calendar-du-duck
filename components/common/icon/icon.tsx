@@ -13,13 +13,16 @@ export const iconSizes = {
 } as const;
 export type IconSize = keyof typeof iconSizes;
 
+type IconWeight = "thin" | "light" | "regular" | "bold" | "fill" | "duotone";
+
 type IconProps = ComponentPropsWithoutRef<"svg"> & {
   name: IconName;
   size?: IconSize;
+  weight?: IconWeight;
 };
 
 export const Icon = forwardRef<SVGSVGElement, IconProps>(
-  ({ className, name, size = "sm", ...props }, ref) => {
+  ({ className, name, size = "sm", weight = "regular", ...props }, ref) => {
     const IconComponent = ICONS[name];
 
     return (
@@ -29,6 +32,7 @@ export const Icon = forwardRef<SVGSVGElement, IconProps>(
         className={cn("shrink-0", className)}
         focusable={false}
         size={iconSizes[size]}
+        weight={weight}
         {...props}
       />
     );

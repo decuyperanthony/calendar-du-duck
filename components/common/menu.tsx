@@ -34,25 +34,37 @@ export const Menu = () => {
                   <Link
                     href={item.path}
                     className={cn(
-                      "relative flex flex-col items-center gap-1 rounded-xl px-4 py-2.5 text-sm font-medium transition-all duration-300",
-                      "text-white/70 hover:text-white hover:bg-white/10",
+                      "group relative flex flex-col items-center gap-1.5 rounded-xl px-3 py-2.5 md:px-5 text-sm font-medium transition-all duration-300",
+                      "text-white/60 hover:text-white hover:bg-white/5",
                       isActive && "text-primary bg-white/10"
                     )}
                     aria-selected={isActive}
                   >
                     <Icon
                       name={item.icon}
+                      size="md"
+                      weight={isActive ? "fill" : "regular"}
                       className={cn(
-                        "h-5 w-5 md:hidden transition-all duration-300",
-                        isActive && "text-primary scale-110"
+                        "transition-all duration-300",
+                        isActive
+                          ? "text-primary scale-110"
+                          : "group-hover:scale-105 group-hover:text-white"
                       )}
                     />
-                    <span className="hidden md:inline uppercase tracking-wider text-xs font-semibold">
+                    <span
+                      className={cn(
+                        "hidden md:block text-[10px] uppercase tracking-widest font-semibold transition-all duration-300",
+                        isActive ? "text-primary" : "text-white/50 group-hover:text-white/80"
+                      )}
+                    >
                       {item.label}
                     </span>
-                    {isActive && (
-                      <span className="absolute -bottom-1 left-1/2 h-0.5 w-6 -translate-x-1/2 rounded-full bg-primary hidden md:block" />
-                    )}
+                    <span
+                      className={cn(
+                        "absolute -bottom-0.5 left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-primary transition-all duration-300",
+                        isActive ? "w-8 opacity-100" : "w-0 opacity-0 group-hover:w-4 group-hover:opacity-50"
+                      )}
+                    />
                   </Link>
                 </NavigationMenuItem>
               );
