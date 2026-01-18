@@ -22,7 +22,7 @@ export const Menu = () => {
   const pathname = usePathname();
 
   return (
-    <header className="gradient-primary text-white">
+    <header className="sticky top-0 z-50 glass-dark">
       <div className="px-4 py-3">
         <NavigationMenu className="mx-auto max-w-4xl">
           <NavigationMenuList className="gap-1">
@@ -34,22 +34,24 @@ export const Menu = () => {
                   <Link
                     href={item.path}
                     className={cn(
-                      "relative flex flex-col items-center gap-1 rounded-xl px-4 py-2.5 text-sm font-medium transition-all duration-200",
-                      "hover:bg-white/15",
-                      isActive && "bg-white/20 shadow-lg"
+                      "relative flex flex-col items-center gap-1 rounded-xl px-4 py-2.5 text-sm font-medium transition-all duration-300",
+                      "text-white/70 hover:text-white hover:bg-white/10",
+                      isActive && "text-primary bg-white/10"
                     )}
                     aria-selected={isActive}
                   >
                     <Icon
                       name={item.icon}
                       className={cn(
-                        "h-5 w-5 md:hidden transition-transform duration-200",
-                        isActive && "scale-110"
+                        "h-5 w-5 md:hidden transition-all duration-300",
+                        isActive && "text-primary scale-110"
                       )}
                     />
-                    <span className="hidden md:inline">{item.label}</span>
+                    <span className="hidden md:inline uppercase tracking-wider text-xs font-semibold">
+                      {item.label}
+                    </span>
                     {isActive && (
-                      <span className="absolute -bottom-0.5 left-1/2 h-0.5 w-8 -translate-x-1/2 rounded-full bg-white/80 md:block hidden" />
+                      <span className="absolute -bottom-1 left-1/2 h-0.5 w-6 -translate-x-1/2 rounded-full bg-primary hidden md:block" />
                     )}
                   </Link>
                 </NavigationMenuItem>
