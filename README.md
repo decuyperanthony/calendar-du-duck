@@ -1,27 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Calendar du Duck
+
+A family organization app for managing kids' weekly schedules, activities, and school routines. Built with a Disney+ inspired dark purple theme.
+
+## Features
+
+- **Semaines** - Weekly calendar with even/odd week tracking
+- **Activités** - Kids' extracurricular activities (football, ping-pong, matches)
+- **Planning** - Visual school schedules with zoomable images
+- **Heure d'arrivée** - School arrival times calculator
+- **Passation** - Checklist for parent handoffs (school items, gear, etc.)
+
+## Tech Stack
+
+- **Framework** - [Next.js 16](https://nextjs.org) with App Router
+- **Language** - TypeScript
+- **Styling** - Tailwind CSS with custom dark theme
+- **UI Components** - Radix UI primitives + shadcn/ui
+- **i18n** - next-intl (French)
+- **Forms** - React Hook Form + Zod validation
+- **Icons** - Lucide React
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Install dependencies
+pnpm install
+
+# Run development server
 pnpm dev
-# or
-bun dev
+
+# Build for production
+pnpm build
+
+# Start production server
+pnpm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+├── activites/      # Kids activities page
+├── heure-arrivee/  # School arrival times
+├── passation/      # Parent handoff checklist
+├── planning/       # School schedule images
+├── semaines/       # Weekly calendar
+└── page.tsx        # Home page
 
-## Deploy on Vercel
+components/
+├── common/         # Shared components (Menu, ActivityCard, Icon)
+└── ui/             # Base UI components (Card, Badge, Tabs, Alert)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+translations/
+└── fr.json         # French translations
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Design
+
+Disney+ inspired dark purple theme with:
+- Dark purple background (`hsl(270 89% 8%)`)
+- Teal primary accent
+- Glass morphism effects
+- Inter font family
+
+## License
+
+Private project.

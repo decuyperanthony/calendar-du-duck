@@ -20,28 +20,46 @@ export const menuItems = [
 
 export const Menu = () => {
   const pathname = usePathname();
-  return (
-    <div className="bg-gray-800 text-white p-4">
-      <NavigationMenu className="m-auto">
-        <NavigationMenuList className="gap-2">
-          {menuItems.map((item) => (
-            <NavigationMenuItem key={item.path}>
-              <Link
-                href={item.path}
-                className={cn(
-                  "text-white hover:text-gray-300 py-2 rounded flex flex-col items-center px-4",
-                  pathname === item.path ? "bg-gray-700" : ""
-                )}
-                aria-selected={pathname === item.path}
-              >
-                <Icon name={item.icon} className="w-6 h-6 md:hidden" />
 
-                <span className="hidden md:inline">{item.label}</span>
-              </Link>
-            </NavigationMenuItem>
-          ))}
-        </NavigationMenuList>
-      </NavigationMenu>
-    </div>
+  return (
+    <header className="sticky top-0 z-50 glass-dark">
+      <div className="px-4 py-3">
+        <NavigationMenu className="mx-auto max-w-4xl">
+          <NavigationMenuList className="gap-1">
+            {menuItems.map((item) => {
+              const isActive = pathname === item.path;
+
+              return (
+                <NavigationMenuItem key={item.path}>
+                  <Link
+                    href={item.path}
+                    className={cn(
+                      "relative flex flex-col items-center gap-1 rounded-xl px-4 py-2.5 text-sm font-medium transition-all duration-300",
+                      "text-white/70 hover:text-white hover:bg-white/10",
+                      isActive && "text-primary bg-white/10"
+                    )}
+                    aria-selected={isActive}
+                  >
+                    <Icon
+                      name={item.icon}
+                      className={cn(
+                        "h-5 w-5 md:hidden transition-all duration-300",
+                        isActive && "text-primary scale-110"
+                      )}
+                    />
+                    <span className="hidden md:inline uppercase tracking-wider text-xs font-semibold">
+                      {item.label}
+                    </span>
+                    {isActive && (
+                      <span className="absolute -bottom-1 left-1/2 h-0.5 w-6 -translate-x-1/2 rounded-full bg-primary hidden md:block" />
+                    )}
+                  </Link>
+                </NavigationMenuItem>
+              );
+            })}
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
+    </header>
   );
 };
