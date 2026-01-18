@@ -1,19 +1,33 @@
 import {
   AlertCircle,
   Calendar,
+  CalendarCheck,
+  CheckCircle,
   Clipboard,
-  Trophy,
+  Info,
   Repeat,
   TimerIcon,
+  Trophy,
+  Dribbble,
+  CircleDot,
+  Clock,
+  MapPin,
 } from "lucide-react";
 
 export const ICONS = {
   "alert-circle": AlertCircle,
   calendar: Calendar,
+  "calendar-check": CalendarCheck,
+  "check-circle": CheckCircle,
   clipboard: Clipboard,
-  trophy: Trophy,
+  info: Info,
   repeat: Repeat,
   timer: TimerIcon,
+  trophy: Trophy,
+  football: Dribbble,
+  "ping-pong": CircleDot,
+  clock: Clock,
+  location: MapPin,
 } as const;
 
 export type IconName = keyof typeof ICONS;
