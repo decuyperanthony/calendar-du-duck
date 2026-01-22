@@ -5,13 +5,14 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 type CustodyHeroProps = {
-  name: string;
+  role: string;
   weekLabel: string;
+  weekDetail: string;
   subtitle: string;
   variant: "anthony" | "flora";
 };
 
-export const CustodyHero = ({ name, weekLabel, subtitle, variant }: CustodyHeroProps) => {
+export const CustodyHero = ({ role, weekLabel, weekDetail, subtitle, variant }: CustodyHeroProps) => {
   const isAnthony = variant === "anthony";
 
   return (
@@ -45,7 +46,7 @@ export const CustodyHero = ({ name, weekLabel, subtitle, variant }: CustodyHeroP
         >
           <Image
             src={images[variant]}
-            alt={name}
+            alt={role}
             fill
             className="object-cover"
             priority
@@ -53,18 +54,23 @@ export const CustodyHero = ({ name, weekLabel, subtitle, variant }: CustodyHeroP
         </div>
 
         {/* Week type */}
-        <p className="text-sm uppercase tracking-widest text-white/60 font-medium">
-          {weekLabel}
-        </p>
+        <div className="text-center space-y-1">
+          <p className="text-lg md:text-xl uppercase tracking-widest text-white/80 font-bold">
+            {weekLabel}
+          </p>
+          <p className="text-sm italic text-white/50">
+            {weekDetail}
+          </p>
+        </div>
 
-        {/* Name - THE HERO */}
+        {/* Role - THE HERO */}
         <h1
           className={cn(
             "text-4xl md:text-6xl font-bold tracking-tight",
             isAnthony ? "text-primary" : "text-accent"
           )}
         >
-          {name}
+          {role}
         </h1>
 
         {/* Subtitle */}

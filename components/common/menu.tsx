@@ -9,12 +9,13 @@ import {
 } from "../ui/navigation-menu";
 import { usePathname } from "next/navigation";
 import { Icon } from "./icon";
+import { GlassBar } from "../ui/glass-bar";
 
 export const menuItems = [
   { label: "Semaines", path: "/semaines", icon: "calendar" },
-  { label: "Activités", path: "/activites", icon: "trophy" },
+  { label: "Activites", path: "/activites", icon: "trophy" },
   { label: "Passation", path: "/passation", icon: "repeat" },
-  { label: "Heure d'arrivée", path: "/heure-arrivee", icon: "timer" },
+  { label: "Heure d'arrivee", path: "/heure-arrivee", icon: "timer" },
   { label: "Plannings", path: "/planning", icon: "clipboard" },
 ] as const;
 
@@ -22,7 +23,7 @@ export const Menu = () => {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 glass-dark">
+    <GlassBar position="top" className="hidden md:block">
       <div className="px-4 py-3">
         <NavigationMenu className="mx-auto max-w-4xl">
           <NavigationMenuList className="gap-1">
@@ -75,6 +76,6 @@ export const Menu = () => {
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-    </header>
+    </GlassBar>
   );
 };

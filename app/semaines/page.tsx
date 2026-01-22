@@ -8,8 +8,8 @@ import { getWeekType, today, WeekType } from "@/utils";
 import { ChangeEvent, useState } from "react";
 
 const gardeConfig = {
-  EVEN: { name: "Anthony", variant: "anthony" },
-  ODD: { name: "Flora", variant: "flora" },
+  EVEN: { variant: "anthony", role: "papa" },
+  ODD: { variant: "flora", role: "maman" },
 } as const;
 
 const Page = () => {
@@ -49,8 +49,9 @@ const Page = () => {
 
       {/* Custody Hero - BIG and visible */}
       <CustodyHero
-        name={garde.name}
+        role={t(garde.role)}
         weekLabel={t("week-label", { type: t(weekType) })}
+        weekDetail={t(`${weekType}-detail`)}
         subtitle={t("custody-subtitle")}
         variant={garde.variant}
       />
