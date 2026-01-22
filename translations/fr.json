@@ -12,13 +12,17 @@
       "arrival-time": "Heure d'arrivée"
     },
     "week": {
-      "EVEN": "paire",
-      "ODD": "impaire",
+      "EVEN": "A",
+      "ODD": "B",
+      "EVEN-detail": "semaine paire",
+      "ODD-detail": "semaine impaire",
       "custody-title": "Calcul de garde",
       "custody-message": "C'est la semaine de garde de {name}.",
       "custody-subtitle": "a la garde cette semaine",
       "week-label": "Semaine {type}",
-      "choose-date": "Choisir une date"
+      "choose-date": "Choisir une date",
+      "papa": "Papa",
+      "maman": "Maman"
     }
   },
   "school-schedule": {

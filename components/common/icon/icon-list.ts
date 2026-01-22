@@ -12,22 +12,27 @@ import {
   PingPong,
   Clock,
   MapPin,
+  WifiX,
+  CloudArrowUp,
 } from "@phosphor-icons/react/dist/ssr";
 
 export const ICONS = {
   "alert-circle": WarningCircle,
+  "arrows-clockwise": ArrowsClockwise,
   calendar: CalendarBlank,
   "calendar-check": CalendarCheck,
   "check-circle": CheckCircle,
   clipboard: ClipboardText,
+  "cloud-arrow-up": CloudArrowUp,
+  clock: Clock,
+  football: SoccerBall,
   info: Info,
+  location: MapPin,
+  "ping-pong": PingPong,
   repeat: ArrowsClockwise,
   timer: Timer,
   trophy: Trophy,
-  football: SoccerBall,
-  "ping-pong": PingPong,
-  clock: Clock,
-  location: MapPin,
+  "wifi-x": WifiX,
 } as const;
 
 export type IconName = keyof typeof ICONS;

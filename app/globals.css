@@ -66,6 +66,27 @@
     text-wrap: balance;
   }
 
+  /* Safe area utilities for PWA */
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .pb-nav-safe {
+    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
+  }
+
+  .pl-safe {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .pr-safe {
+    padding-right: env(safe-area-inset-right);
+  }
+
   /* Disney+ style gradient background */
   .gradient-dark {
     background: linear-gradient(
@@ -224,4 +245,38 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 100%;
   opacity: 0;
   cursor: pointer;
+}
+
+/* PWA Splash Screen */
+#splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f0a1e;
+  transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+}
+
+#splash-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#splash-screen svg {
+  width: 120px;
+  height: 120px;
+  animation: splash-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes splash-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
 }
