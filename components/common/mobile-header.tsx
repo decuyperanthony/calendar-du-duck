@@ -1,6 +1,7 @@
 "use client";
 
 import { GlassBar } from "../ui/glass-bar";
+import { images } from "@/assets/image";
 import Image from "next/image";
 
 export const MobileHeader = () => {
@@ -8,7 +9,7 @@ export const MobileHeader = () => {
     <GlassBar position="top" className="md:hidden">
       <div className="flex items-center gap-2 px-4 py-2">
         <Image
-          src="/icons/leo-lucky-logo.svg"
+          src={images["leo-lucky-logo"]}
           alt="Leo & Lucky"
           width={80}
           height={32}
