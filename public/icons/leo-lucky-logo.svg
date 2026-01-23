@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 48">
+  <!-- Leo (left) - châtain clair, casquette, t-shirt bleu -->
+  <g id="leo">
+    <!-- Corps/T-shirt bleu -->
+    <path d="M20 48 Q20 38 28 36 L32 36 Q40 38 40 48" fill="#60a5fa"/>
+    <!-- Tête -->
+    <circle cx="30" cy="26" r="10" fill="#fcd9b6"/>
+    <!-- Cheveux châtain clair -->
+    <path d="M22 22 Q22 16 30 16 Q38 16 38 22 L38 20 Q38 14 30 14 Q22 14 22 20 Z" fill="#8B7355"/>
+    <!-- Casquette -->
+    <ellipse cx="30" cy="17" rx="11" ry="4" fill="#3b82f6"/>
+    <path d="M19 17 Q17 17 17 19 L24 19 Q24 17 22 17 Z" fill="#3b82f6"/>
+    <!-- Visage -->
+    <circle cx="27" cy="26" r="1.2" fill="#4a3728"/> <!-- oeil gauche -->
+    <circle cx="33" cy="26" r="1.2" fill="#4a3728"/> <!-- oeil droit -->
+    <path d="M28 30 Q30 32 32 30" stroke="#4a3728" stroke-width="1" fill="none"/> <!-- sourire -->
+    <!-- Bras (vers Lucky) -->
+    <path d="M40 40 Q48 38 52 40" stroke="#fcd9b6" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Lucky (right) - blond, casquette, t-shirt rose -->
+  <g id="lucky">
+    <!-- Corps/T-shirt rose -->
+    <path d="M80 48 Q80 38 88 36 L92 36 Q100 38 100 48" fill="#f9a8d4"/>
+    <!-- Tête -->
+    <circle cx="90" cy="26" r="10" fill="#fcd9b6"/>
+    <!-- Cheveux blonds -->
+    <path d="M82 22 Q82 16 90 16 Q98 16 98 22 L98 20 Q98 14 90 14 Q82 14 82 20 Z" fill="#d4a84b"/>
+    <!-- Casquette -->
+    <ellipse cx="90" cy="17" rx="11" ry="4" fill="#1f2937"/>
+    <path d="M101 17 Q103 17 103 19 L96 19 Q96 17 98 17 Z" fill="#1f2937"/>
+    <!-- Visage -->
+    <circle cx="87" cy="26" r="1.2" fill="#4a3728"/> <!-- oeil gauche -->
+    <circle cx="93" cy="26" r="1.2" fill="#4a3728"/> <!-- oeil droit -->
+    <path d="M88 30 Q90 32 92 30" stroke="#4a3728" stroke-width="1" fill="none"/> <!-- sourire -->
+    <!-- Bras (vers Leo) -->
+    <path d="M80 40 Q72 38 68 40" stroke="#fcd9b6" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Bras qui se touchent au milieu -->
+  <ellipse cx="60" cy="39" rx="6" ry="3" fill="#fcd9b6"/>
+</svg>
