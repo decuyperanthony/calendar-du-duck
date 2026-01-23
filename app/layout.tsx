@@ -111,18 +111,18 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="bg-background">
-      <body className="min-h-dvh">
+    <html lang={locale} suppressHydrationWarning className="bg-background">
+      <body className="min-h-dvh antialiased">
         {/* Splash screen */}
         <div id="splash-screen">
           <SplashIcon />
         </div>
 
         <NextIntlClientProvider messages={messages}>
-          <div className="gradient-dark min-h-dvh flex flex-col">
+          <div className="gradient-dark min-h-dvh">
             <Menu />
             <MobileHeader />
-            <main className="flex-1 px-4 py-6 md:px-6 md:py-8 mt-12 md:mt-20 pb-nav-safe">
+            <main className="px-4 py-6 md:px-6 md:py-8 mt-12 md:mt-20 pb-nav-safe">
               <div className="mx-auto max-w-4xl animate-in">{children}</div>
             </main>
             <BottomNav />
