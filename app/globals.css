@@ -72,7 +72,8 @@
   }
 
   .pb-safe {
-    padding-bottom: env(safe-area-inset-bottom);
+    /* Fallback for Android Chrome PWA where env() may return 0 */
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
   }
 
   .pb-nav-safe {
