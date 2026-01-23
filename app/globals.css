@@ -55,9 +55,15 @@
     @apply border-border;
   }
 
+  html {
+    background-color: hsl(270 89% 8%);
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100svh;
+    min-height: -webkit-fill-available;
   }
 }
 
@@ -69,6 +75,10 @@
   /* Safe area utilities for PWA */
   .pt-safe {
     padding-top: env(safe-area-inset-top);
+  }
+
+  .mt-safe {
+    margin-top: env(safe-area-inset-top);
   }
 
   .pb-safe {
@@ -96,6 +106,9 @@
       hsl(280 60% 12%) 50%,
       hsl(270 50% 5%) 100%
     );
+    background-attachment: fixed;
+    min-height: 100svh;
+    min-height: -webkit-fill-available;
   }
 
   /* Header gradient */

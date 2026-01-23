@@ -122,7 +122,7 @@ export default async function RootLayout({
           <div className="flex min-h-svh flex-col pt-safe">
             <Menu />
             <MobileHeader />
-            <main className="flex-1 px-4 py-6 md:px-6 md:py-8 md:mt-20 pb-nav-safe md:pb-6">
+            <main className="flex-1 px-4 pt-6 md:px-6 md:pt-8 mt-14 md:mt-20 pb-nav-safe md:pb-8">
               <div className="mx-auto max-w-4xl animate-in">{children}</div>
             </main>
             <BottomNav />
