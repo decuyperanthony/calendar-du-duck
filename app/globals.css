@@ -57,13 +57,14 @@
 
   html {
     background-color: hsl(270 89% 8%);
+    height: 100%;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;
-    min-height: 100svh;
-    min-height: -webkit-fill-available;
+    /* PWA iOS fix: extend height to cover bottom safe area */
+    min-height: calc(100% + env(safe-area-inset-top));
   }
 }
 
