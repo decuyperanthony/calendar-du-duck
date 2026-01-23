@@ -1,11 +1,10 @@
 "use client";
 
 import { CustodyHero } from "@/components/common/custody-hero";
-import { Icon } from "@/components/common/icon";
-import { Input } from "@/components/ui/input";
+import { DatePickerButton } from "@/components/ui/date-picker-button";
 import { useScoped18n } from "@/lib/next-intl";
 import { getWeekType, today, WeekType } from "@/utils";
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 
 const gardeConfig = {
   EVEN: { variant: "anthony", role: "papa" },
@@ -13,12 +12,13 @@ const gardeConfig = {
 } as const;
 
 const Page = () => {
+  const [selectedDate, setSelectedDate] = useState(today);
   const [weekType, setWeekType] = useState<WeekType>(getWeekType(today));
   const t = useScoped18n("common.week");
 
-  const handleDateChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const date = e.target.value;
+  const handleDateChange = (date: string) => {
     if (date) {
+      setSelectedDate(date);
       setWeekType(getWeekType(date));
     }
   };
@@ -32,19 +32,10 @@ const Page = () => {
         <label className="block text-xs uppercase tracking-widest text-white/50 mb-2 font-medium">
           {t("choose-date")}
         </label>
-        <div className="relative">
-          <Input
-            type="date"
-            onChange={handleDateChange}
-            className="w-full pr-12"
-            defaultValue={today}
-          />
-          <Icon
-            name="calendar"
-            size="md"
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-primary pointer-events-none"
-          />
-        </div>
+        <DatePickerButton
+          value={selectedDate}
+          onChange={handleDateChange}
+        />
       </div>
 
       {/* Custody Hero - BIG and visible */}
