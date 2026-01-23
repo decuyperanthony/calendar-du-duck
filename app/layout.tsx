@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import "./globals.css";
 import { Menu } from "@/components/common/menu";
+import { MobileHeader } from "@/components/common/mobile-header";
 import { BottomNav } from "@/components/common/bottom-nav";
 import { getLocale, getMessages } from "next-intl/server";
 import Script from "next/script";
@@ -120,6 +121,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <div className="flex min-h-svh flex-col pt-safe">
             <Menu />
+            <MobileHeader />
             <main className="flex-1 px-4 py-6 md:px-6 md:py-8 md:mt-20 pb-nav-safe md:pb-6">
               <div className="mx-auto max-w-4xl animate-in">{children}</div>
             </main>
