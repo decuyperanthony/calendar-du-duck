@@ -55,16 +55,9 @@
     @apply border-border;
   }
 
-  html {
-    background-color: hsl(270 89% 8%);
-    height: 100%;
-  }
-
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;
-    /* PWA iOS fix: extend height to cover bottom safe area */
-    min-height: calc(100% + env(safe-area-inset-top));
   }
 }
 
@@ -83,12 +76,11 @@
   }
 
   .pb-safe {
-    /* Fallback for Android Chrome PWA where env() may return 0 */
-    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
   .pb-nav-safe {
-    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
+    padding-bottom: calc(6rem + env(safe-area-inset-bottom));
   }
 
   .pl-safe {
@@ -107,9 +99,6 @@
       hsl(280 60% 12%) 50%,
       hsl(270 50% 5%) 100%
     );
-    background-attachment: fixed;
-    min-height: 100svh;
-    min-height: -webkit-fill-available;
   }
 
   /* Header gradient */
