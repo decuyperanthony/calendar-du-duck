@@ -122,7 +122,7 @@ export default async function RootLayout({
           <div className="gradient-dark min-h-dvh">
             <Menu />
             <MobileHeader />
-            <main className="px-4 py-6 md:px-6 md:py-8 mt-12 md:mt-20 pb-nav-safe">
+            <main className="px-4 py-6 md:px-6 md:py-8 mt-header-safe md:mt-20 pb-nav-safe">
               <div className="mx-auto max-w-4xl animate-in">{children}</div>
             </main>
             <BottomNav />

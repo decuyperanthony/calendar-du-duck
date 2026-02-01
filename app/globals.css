@@ -69,6 +69,10 @@
   .mt-safe {
     margin-top: env(safe-area-inset-top);
   }
+  /* Mobile header height (48px) + safe area for content below fixed header */
+  .mt-header-safe {
+    margin-top: calc(3rem + env(safe-area-inset-top));
+  }
 }
 
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
@@ -126,6 +130,23 @@
   /* Glass effect for dark mode */
   .glass-dark {
     @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  /* Apple Liquid Glass effect - iOS 26 inspired */
+  .liquid-glass {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0.08) 100%
+    );
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.05);
   }
 
   /* Glow effects */
