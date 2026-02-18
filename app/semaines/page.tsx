@@ -3,7 +3,13 @@
 import { CustodyHero } from "@/components/common/custody-hero";
 import { DatePickerButton } from "@/components/ui/date-picker-button";
 import { useScoped18n } from "@/lib/next-intl";
-import { getWeekType, today, WeekType } from "@/utils";
+import {
+  getSchoolHolidayInfo,
+  getWeekType,
+  SchoolHolidayInfo,
+  today,
+  WeekType,
+} from "@/utils";
 import { useState } from "react";
 
 const gardeConfig = {
@@ -14,16 +20,24 @@ const gardeConfig = {
 const Page = () => {
   const [selectedDate, setSelectedDate] = useState(today);
   const [weekType, setWeekType] = useState<WeekType>(getWeekType(today));
+  const [holidayInfo, setHolidayInfo] = useState<SchoolHolidayInfo>(
+    getSchoolHolidayInfo(today)
+  );
   const t = useScoped18n("common.week");
 
   const handleDateChange = (date: string) => {
     if (date) {
       setSelectedDate(date);
       setWeekType(getWeekType(date));
+      setHolidayInfo(getSchoolHolidayInfo(date));
     }
   };
 
   const garde = gardeConfig[weekType];
+
+  const periodLabel = holidayInfo.isHoliday && holidayInfo.holidayName
+    ? t(`holiday-${holidayInfo.holidayName}`)
+    : t("school-week");
 
   return (
     <div className="space-y-6 w-full max-w-2xl mx-auto">
@@ -45,6 +59,9 @@ const Page = () => {
         weekDetail={t(`${weekType}-detail`)}
         subtitle={t("custody-subtitle")}
         variant={garde.variant}
+        isHoliday={holidayInfo.isHoliday}
+        periodLabel={periodLabel}
+        zoneLabel={t("zone")}
       />
     </div>
   );
