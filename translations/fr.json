@@ -22,7 +22,16 @@
       "week-label": "Semaine {type}",
       "choose-date": "Choisir une date",
       "papa": "Papa",
-      "maman": "Maman"
+      "maman": "Maman",
+      "school-week": "Semaine scolaire",
+      "holiday-week": "Vacances",
+      "zone": "Zone C",
+      "holiday-toussaint": "Vacances de la Toussaint",
+      "holiday-noel": "Vacances de Noël",
+      "holiday-hiver": "Vacances d'hiver",
+      "holiday-printemps": "Vacances de printemps",
+      "holiday-ascension": "Pont de l'Ascension",
+      "holiday-ete": "Vacances d'été"
     }
   },
   "school-schedule": {

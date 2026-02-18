@@ -2,6 +2,7 @@
 
 import { images } from "@/assets/image";
 import { cn } from "@/lib/utils";
+import { Palmtree, School } from "lucide-react";
 import Image from "next/image";
 
 type CustodyHeroProps = {
@@ -10,9 +11,21 @@ type CustodyHeroProps = {
   weekDetail: string;
   subtitle: string;
   variant: "anthony" | "flora";
+  isHoliday: boolean;
+  periodLabel: string;
+  zoneLabel: string;
 };
 
-export const CustodyHero = ({ role, weekLabel, weekDetail, subtitle, variant }: CustodyHeroProps) => {
+export const CustodyHero = ({
+  role,
+  weekLabel,
+  weekDetail,
+  subtitle,
+  variant,
+  isHoliday,
+  periodLabel,
+  zoneLabel,
+}: CustodyHeroProps) => {
   const isAnthony = variant === "anthony";
 
   return (
@@ -77,6 +90,25 @@ export const CustodyHero = ({ role, weekLabel, weekDetail, subtitle, variant }: 
         <p className="text-white/50 text-sm">
           {subtitle}
         </p>
+
+        {/* Holiday / School week badge */}
+        <div
+          className={cn(
+            "flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all duration-500",
+            isHoliday
+              ? "bg-amber-500/15 text-amber-300 border border-amber-500/30"
+              : "bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"
+          )}
+        >
+          {isHoliday ? (
+            <Palmtree className="h-4 w-4" />
+          ) : (
+            <School className="h-4 w-4" />
+          )}
+          <span>{periodLabel}</span>
+          <span className="text-white/30">·</span>
+          <span className="text-white/50 text-xs">{zoneLabel}</span>
+        </div>
       </div>
     </div>
   );
