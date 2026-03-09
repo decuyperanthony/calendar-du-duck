@@ -16,6 +16,7 @@ const Page = () => {
 
   const lucasItems = [
     t("items.nike-shoes"),
+    t("items.nike-jacket"),
     t("items.class-items"),
   ];
 
