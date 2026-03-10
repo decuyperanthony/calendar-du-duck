@@ -13,6 +13,7 @@ import { GlassBar } from "../ui/glass-bar";
 
 export const menuItems = [
   { label: "Semaines", path: "/semaines", icon: "calendar" },
+  { label: "Sobriété", path: "/sobriete", icon: "heart" },
   { label: "Activites", path: "/activites", icon: "trophy" },
   { label: "Passation", path: "/passation", icon: "repeat" },
   { label: "Heure d'arrivee", path: "/heure-arrivee", icon: "timer" },

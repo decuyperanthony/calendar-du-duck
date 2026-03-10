@@ -7,9 +7,9 @@ import { Icon } from "./icon";
 
 const navItems = [
   { label: "Semaines", path: "/semaines", icon: "calendar" },
+  { label: "Sobriété", path: "/sobriete", icon: "heart" },
   { label: "Activites", path: "/activites", icon: "trophy" },
   { label: "Passation", path: "/passation", icon: "repeat" },
-  { label: "Arrivee", path: "/heure-arrivee", icon: "timer" },
   { label: "Plannings", path: "/planning", icon: "clipboard" },
 ] as const;
 
