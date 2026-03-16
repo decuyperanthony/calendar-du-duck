@@ -9,7 +9,6 @@ const Page = () => {
   const t = useScoped18n("passation");
 
   const leonardItems = [
-    t("items.gel"),
     t("items.class-items"),
     t("items.new-balance"),
   ];
