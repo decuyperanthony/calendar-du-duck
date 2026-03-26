@@ -8,31 +8,31 @@ const toTodoItems = (labels: string[]) =>
 const Page = () => {
   const t = useScoped18n("passation");
 
-  const leonardItems = [
+  const childAItems = [
     t("items.class-items"),
-    t("items.new-balance"),
+    t("items.sneakers"),
   ];
 
-  const lucasItems = [
-    t("items.nike-shoes"),
-    t("items.nike-jacket"),
+  const childBItems = [
+    t("items.sport-shoes"),
+    t("items.sport-jacket"),
     t("items.class-items"),
   ];
 
   const tabs = [
     {
-      label: t("tabs.leonard"),
-      value: "leonard",
-      content: <TodoList items={toTodoItems(leonardItems)} />,
+      label: t("tabs.child-a"),
+      value: "child-a",
+      content: <TodoList items={toTodoItems(childAItems)} />,
     },
     {
-      label: t("tabs.lucas"),
-      value: "lucas",
-      content: <TodoList items={toTodoItems(lucasItems)} />,
+      label: t("tabs.child-b"),
+      value: "child-b",
+      content: <TodoList items={toTodoItems(childBItems)} />,
     },
   ];
 
-  return <GenericTabs tabs={tabs} defaultTab="leonard" />;
+  return <GenericTabs tabs={tabs} defaultTab="child-a" />;
 };
 
 export default Page;

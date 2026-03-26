@@ -1,6 +1,6 @@
 {
-  "name": "Leo et Lucky",
-  "short_name": "Leo & Lucky",
+  "name": "Calendar du Duck",
+  "short_name": "Calendar du Duck",
   "description": "Organisation familiale - Garde alternee",
   "start_url": "/semaines",
   "display": "standalone",

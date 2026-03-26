@@ -5,7 +5,7 @@ Project-specific context for Claude agents.
 ## Project Overview
 
 **Purpose:** Family organization app for shared custody (garde alternée)
-**Users:** Anthony & Flora - parents of Léonard & Lucas
+**Users:** Two co-parents managing custody of two children
 
 ## Tech Stack
 
@@ -45,9 +45,9 @@ translations/
 ```ts
 // assets/image.ts
 export const images = {
-  "planning-leonard": "/images/planning-leonard.jpg",
-  anthony: "/images/anthony.jpg",
-  flora: "/images/flora.jpg",
+  "planning-child-a": "/images/planning-child-a.jpg",
+  "parent-a": "/images/parent-a.jpg",
+  "parent-b": "/images/parent-b.jpg",
 };
 export type image = keyof typeof images;
 ```
@@ -57,6 +57,10 @@ export type image = keyof typeof images;
 const t = useScoped18n("common.week");
 t("custody-subtitle") // → "a la garde cette semaine"
 ```
+
+### Personalization
+- Family names are configurable via `.env.local` (see `.env.example`)
+- Default values: "Parent A", "Parent B", "Enfant 1", "Enfant 2"
 
 ### Theming
 - All colors via CSS variables (HSL without wrapper)
@@ -74,13 +78,13 @@ t("custody-subtitle") // → "a la garde cette semaine"
 ## Business Logic
 
 ### Custody Calculation
-- **EVEN weeks** → Anthony's custody
-- **ODD weeks** → Flora's custody
+- **EVEN weeks** → Parent A's custody
+- **ODD weeks** → Parent B's custody
 - Week number from `dayjs().isoWeek()`
 
 ### Children
-- **Léonard** - Ping pong
-- **Lucas** - Football (training + matches)
+- **Child A** - Ping pong
+- **Child B** - Football (training + matches)
 
 ## Commands
 
@@ -108,3 +112,4 @@ pnpm lint         # ESLint
 | `assets/image.ts` | Image paths registry |
 | `components/common/menu.tsx` | Navigation menu |
 | `components/common/custody-hero.tsx` | Main custody display |
+| `lib/family-config.ts` | Env-based family name config |

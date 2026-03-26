@@ -13,8 +13,8 @@ import {
 import { useState } from "react";
 
 const gardeConfig = {
-  EVEN: { variant: "anthony", role: "papa" },
-  ODD: { variant: "flora", role: "maman" },
+  EVEN: { variant: "parent-a", role: "papa" },
+  ODD: { variant: "parent-b", role: "maman" },
 } as const;
 
 const Page = () => {

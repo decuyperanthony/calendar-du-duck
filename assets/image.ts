@@ -1,8 +1,8 @@
 export const images = {
-  "planning-leonard": "/images/planning-leonard.jpg",
-  "planning-lucas": "/images/planning-lucas.jpg",
-  anthony: "/images/anthony.jpg",
-  flora: "/images/flora.jpg",
+  "planning-child-a": "/images/planning-child-a.jpg",
+  "planning-child-b": "/images/planning-child-b.jpg",
+  "parent-a": "/images/parent-a.jpg",
+  "parent-b": "/images/parent-b.jpg",
   "leo-lucky-logo": "/icons/leo-lucky-logo.svg",
 };
 
