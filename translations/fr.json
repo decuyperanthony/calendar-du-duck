@@ -1,8 +1,8 @@
 {
   "common": {
     "children": {
-      "leonard": "Léonard",
-      "lucas": "Lucas"
+      "child-a": "Enfant 1",
+      "child-b": "Enfant 2"
     },
     "nav": {
       "weeks": "Semaines",
@@ -53,28 +53,28 @@
   },
   "passation": {
     "tabs": {
-      "leonard": "Léonard",
-      "lucas": "Lucas"
+      "child-a": "Enfant 1",
+      "child-b": "Enfant 2"
     },
     "items": {
-      "nike-shoes": "Chaussures Nike",
-      "class-items": "Affaires classe",
-      "new-balance": "Basket New Balance",
-      "nike-jacket": "Veste blanche Nike"
+      "sport-shoes": "Chaussures de sport",
+      "class-items": "Affaires de classe",
+      "sneakers": "Baskets",
+      "sport-jacket": "Veste de sport"
     }
   },
   "activities": {
     "tabs": {
-      "leonard": "Léonard",
-      "lucas": "Lucas"
+      "child-a": "Enfant 1",
+      "child-b": "Enfant 2"
     },
-    "lucas": {
+    "child-b": {
       "1": { "activity": "Foot - Entrainement", "date": "mardi 19H à 20H30" },
       "2": { "activity": "Foot - Entrainement", "date": "mercredi 16H30 à 18H" },
       "3": { "activity": "Foot - Match", "date": "Samedi" },
       "4": { "activity": "Ping pong - Entrainement", "date": "Samedi 16H30 à 18H" }
     },
-    "leonard": {
+    "child-a": {
       "1": { "activity": "Ping pong - Entrainement", "date": "Samedi 16H30 à 18H" }
     }
   }

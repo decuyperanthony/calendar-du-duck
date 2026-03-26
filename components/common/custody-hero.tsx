@@ -10,7 +10,7 @@ type CustodyHeroProps = {
   weekLabel: string;
   weekDetail: string;
   subtitle: string;
-  variant: "anthony" | "flora";
+  variant: "parent-a" | "parent-b";
   isHoliday: boolean;
   periodLabel: string;
   zoneLabel: string;
@@ -26,14 +26,14 @@ export const CustodyHero = ({
   periodLabel,
   zoneLabel,
 }: CustodyHeroProps) => {
-  const isAnthony = variant === "anthony";
+  const isParentA = variant === "parent-a";
 
   return (
     <div
       className={cn(
         "relative overflow-hidden rounded-3xl p-6 md:p-8",
         "border transition-all duration-500",
-        isAnthony
+        isParentA
           ? "bg-gradient-to-br from-primary/20 via-primary/10 to-transparent border-primary/30"
           : "bg-gradient-to-br from-accent/20 via-accent/10 to-transparent border-accent/30"
       )}
@@ -42,7 +42,7 @@ export const CustodyHero = ({
       <div
         className={cn(
           "absolute -top-20 -right-20 h-40 w-40 rounded-full blur-3xl opacity-30",
-          isAnthony ? "bg-primary" : "bg-accent"
+          isParentA ? "bg-primary" : "bg-accent"
         )}
       />
 
@@ -52,7 +52,7 @@ export const CustodyHero = ({
           className={cn(
             "relative h-24 w-24 md:h-32 md:w-32 rounded-full overflow-hidden",
             "ring-4 shadow-xl",
-            isAnthony
+            isParentA
               ? "ring-primary/50 shadow-primary/20"
               : "ring-accent/50 shadow-accent/20"
           )}
@@ -80,7 +80,7 @@ export const CustodyHero = ({
         <h1
           className={cn(
             "text-4xl md:text-6xl font-bold tracking-tight",
-            isAnthony ? "text-primary" : "text-accent"
+            isParentA ? "text-primary" : "text-accent"
           )}
         >
           {role}

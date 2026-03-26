@@ -7,35 +7,35 @@ import { useScoped18n } from "@/lib/next-intl";
 const Page = () => {
   const t = useScoped18n("activities");
 
-  const lucasActivities = [
-    { activity: t("lucas.1.activity"), date: t("lucas.1.date") },
-    { activity: t("lucas.2.activity"), date: t("lucas.2.date") },
-    { activity: t("lucas.3.activity"), date: t("lucas.3.date") },
-    { activity: t("lucas.4.activity"), date: t("lucas.4.date") },
+  const childBActivities = [
+    { activity: t("child-b.1.activity"), date: t("child-b.1.date") },
+    { activity: t("child-b.2.activity"), date: t("child-b.2.date") },
+    { activity: t("child-b.3.activity"), date: t("child-b.3.date") },
+    { activity: t("child-b.4.activity"), date: t("child-b.4.date") },
   ];
 
-  const leonardActivities = [
-    { activity: t("leonard.1.activity"), date: t("leonard.1.date") },
+  const childAActivities = [
+    { activity: t("child-a.1.activity"), date: t("child-a.1.date") },
   ];
 
   const tabs = [
     {
-      label: t("tabs.leonard"),
-      value: "leonard",
+      label: t("tabs.child-a"),
+      value: "child-a",
       content: (
         <div className="space-y-2">
-          {leonardActivities.map((item, index) => (
+          {childAActivities.map((item, index) => (
             <ActivityCard key={index} activity={item.activity} date={item.date} />
           ))}
         </div>
       ),
     },
     {
-      label: t("tabs.lucas"),
-      value: "lucas",
+      label: t("tabs.child-b"),
+      value: "child-b",
       content: (
         <div className="space-y-2">
-          {lucasActivities.map((item, index) => (
+          {childBActivities.map((item, index) => (
             <ActivityCard key={index} activity={item.activity} date={item.date} />
           ))}
         </div>
@@ -43,7 +43,7 @@ const Page = () => {
     },
   ];
 
-  return <GenericTabs tabs={tabs} defaultTab="leonard" />;
+  return <GenericTabs tabs={tabs} defaultTab="child-a" />;
 };
 
 export default Page;

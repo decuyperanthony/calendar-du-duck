@@ -26,13 +26,13 @@ const splashScreens = [
 ];
 
 export const metadata: Metadata = {
-  title: "Leo et Lucky",
+  title: "Calendar du Duck",
   description: "Organisation familiale - Garde alternee",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Leo & Lucky",
+    title: "Calendar du Duck",
     startupImage: splashScreens.map((s) => ({
       url: `/splash/splash-${s.width}x${s.height}.png`,
       media: `(device-width: ${Math.round(s.width / (s.width > 1500 ? 2 : s.width > 1000 ? 3 : 2))}px) and (device-height: ${Math.round(s.height / (s.width > 1500 ? 2 : s.width > 1000 ? 3 : 2))}px) and (-webkit-device-pixel-ratio: ${s.width > 1500 ? 2 : s.width > 1000 ? 3 : 2})`,
