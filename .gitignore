@@ -40,3 +40,9 @@ public/sw.js
 public/sw.js.map
 public/workbox-*.js
 public/workbox-*.js.map
+
+# Personal images (real family photos / school schedules)
+public/images/parent-a.jpg
+public/images/parent-b.jpg
+public/images/planning-child-a.jpg
+public/images/planning-child-b.jpg
