@@ -1,18 +1,19 @@
 import { FullScreenImage } from "@/components/common/full-screen-image";
 import { GenericTabs } from "@/components/common/generic-tabs";
+import { familyConfig } from "@/lib/family-config";
 
 const tabs = [
   {
-    label: "Enfant 1",
+    label: familyConfig.childA,
     value: "child-a",
     content: (
-      <FullScreenImage image="planning-child-a" alt="Planning Enfant 1" />
+      <FullScreenImage image="planning-child-a" alt={`Planning ${familyConfig.childA}`} />
     ),
   },
   {
-    label: "Enfant 2",
+    label: familyConfig.childB,
     value: "child-b",
-    content: <FullScreenImage image="planning-child-b" alt="Planning Enfant 2" />,
+    content: <FullScreenImage image="planning-child-b" alt={`Planning ${familyConfig.childB}`} />,
   },
 ];
 

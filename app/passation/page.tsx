@@ -8,7 +8,7 @@ import { Icon } from "@/components/common/icon";
 import { SimpleCard } from "@/components/common/simple-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useScoped18n } from "@/lib/next-intl";
+import { familyConfig } from "@/lib/family-config";
 import type { PassationItem } from "@/lib/schema";
 
 type Child = "child-a" | "child-b";
@@ -100,7 +100,6 @@ const PassationList = ({
 };
 
 const Page = () => {
-  const t = useScoped18n("passation");
   const [data, setData] = useState<GroupedItems | null>(null);
 
   const fetchItems = useCallback(async () => {
@@ -123,7 +122,7 @@ const Page = () => {
 
   const tabs = [
     {
-      label: t("tabs.child-a"),
+      label: familyConfig.childA,
       value: "child-a" as const,
       content: (
         <PassationList
@@ -134,7 +133,7 @@ const Page = () => {
       ),
     },
     {
-      label: t("tabs.child-b"),
+      label: familyConfig.childB,
       value: "child-b" as const,
       content: (
         <PassationList
