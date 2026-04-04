@@ -117,9 +117,9 @@ const ActivitiesList = ({
             />
           </SimpleCard>
         ) : (
-          <div key={item.id} className="group/item relative">
+          <div key={item.id} className="relative">
             <ActivityCard activity={item.activity} date={item.schedule} />
-            <div className="absolute right-2 top-2 flex gap-1 opacity-0 transition-opacity group-hover/item:opacity-100">
+            <div className="absolute right-2 top-2 flex gap-1">
               <Button
                 variant="ghost"
                 size="icon"
