@@ -14,6 +14,9 @@ import {
   MapPin,
   WifiX,
   CloudArrowUp,
+  Plus,
+  Trash,
+  PencilSimple,
 } from "@phosphor-icons/react/dist/ssr";
 
 export const ICONS = {
@@ -32,6 +35,9 @@ export const ICONS = {
   repeat: ArrowsClockwise,
   timer: Timer,
   trophy: Trophy,
+  pencil: PencilSimple,
+  plus: Plus,
+  trash: Trash,
   "wifi-x": WifiX,
 } as const;
 
