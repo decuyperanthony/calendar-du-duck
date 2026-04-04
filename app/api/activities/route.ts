@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { activities } from "@/lib/schema";
 
 const createSchema = z.object({
@@ -12,6 +12,7 @@ const createSchema = z.object({
 });
 
 export const GET = async () => {
+  const db = getDb();
   const items = await db
     .select()
     .from(activities)
@@ -36,6 +37,7 @@ export const POST = async (request: Request) => {
     );
   }
 
+  const db = getDb();
   const [item] = await db
     .insert(activities)
     .values(parsed.data)

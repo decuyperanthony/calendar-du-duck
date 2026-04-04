@@ -3,16 +3,12 @@ import { drizzle } from "drizzle-orm/neon-http";
 
 import * as schema from "./schema";
 
-const getDb = () => {
-  const sql = neon(process.env.DATABASE_URL!);
-  return drizzle(sql, { schema });
+let _db: ReturnType<typeof drizzle<typeof schema>> | null = null;
+
+export const getDb = () => {
+  if (!_db) {
+    const sql = neon(process.env.DATABASE_URL!);
+    _db = drizzle(sql, { schema });
+  }
+  return _db;
 };
-
-let _db: ReturnType<typeof getDb> | null = null;
-
-export const db = new Proxy({} as ReturnType<typeof getDb>, {
-  get(_target, prop) {
-    if (!_db) _db = getDb();
-    return Reflect.get(_db, prop);
-  },
-});

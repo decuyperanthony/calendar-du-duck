@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
 
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { activities } from "@/lib/schema";
 
 const updateSchema = z.object({
@@ -25,6 +25,7 @@ export const PUT = async (request: Request, { params }: RouteParams) => {
     );
   }
 
+  const db = getDb();
   const [updated] = await db
     .update(activities)
     .set(parsed.data)
@@ -41,6 +42,7 @@ export const PUT = async (request: Request, { params }: RouteParams) => {
 export const DELETE = async (_request: Request, { params }: RouteParams) => {
   const { id } = await params;
 
+  const db = getDb();
   const [deleted] = await db
     .delete(activities)
     .where(eq(activities.id, Number(id)))
