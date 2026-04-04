@@ -11,9 +11,11 @@ Project-specific context for Claude agents.
 
 - **Framework:** Next.js 16 (App Router)
 - **Language:** TypeScript (strict, no `any`, no `as` casting)
+- **Database:** Neon (Serverless PostgreSQL)
+- **ORM:** Drizzle ORM (type-safe, zero-abstraction)
 - **Styling:** Tailwind CSS + CSS variables (tokens)
 - **UI Components:** shadcn/ui + Radix primitives
-- **Icons:** lucide-react
+- **Icons:** Phosphor Icons + lucide-react
 - **i18n:** next-intl (French only)
 - **Forms:** React Hook Form + Zod
 
@@ -21,22 +23,31 @@ Project-specific context for Claude agents.
 
 ```
 app/
-├── semaines/       # Custody calculator (who has the kids this week)
-├── planning/       # School schedule images
-├── activites/      # Kids activities (football, ping-pong)
-├── passation/      # Handoff checklist between parents
-├── heure-arrivee/  # School arrival times
-└── layout.tsx      # Root layout with Menu
+├── api/
+│   ├── passation/      # CRUD API for handoff checklist items
+│   └── activities/     # CRUD API for extracurricular activities
+├── semaines/           # Custody calculator (who has the kids this week)
+├── planning/           # School schedule images
+├── activites/          # Kids activities - CRUD from DB (football, ping-pong)
+├── passation/          # Handoff checklist - CRUD from DB
+├── heure-arrivee/      # School arrival times
+└── layout.tsx          # Root layout with Menu
 
 components/
-├── common/         # Shared: Menu, Icon, CustodyHero, ActivityCard
-└── ui/             # shadcn/ui: Card, Badge, Tabs, Alert, Input
+├── common/             # Shared: Menu, Icon, CustodyHero, ActivityCard
+└── ui/                 # shadcn/ui: Card, Badge, Tabs, Alert, Input
+
+lib/
+├── db.ts               # Neon + Drizzle connection
+├── schema.ts           # Database schema (passation_items, activities)
+├── family-config.ts    # Env-based family name config
+└── utils.ts            # Tailwind merge utility
 
 assets/
-└── image.ts        # Image paths registry (type-safe)
+└── image.ts            # Image paths registry (type-safe)
 
 translations/
-└── fr.json         # All French translations
+└── fr.json             # All French translations
 ```
 
 ## Key Patterns
@@ -113,3 +124,6 @@ pnpm lint         # ESLint
 | `components/common/menu.tsx` | Navigation menu |
 | `components/common/custody-hero.tsx` | Main custody display |
 | `lib/family-config.ts` | Env-based family name config |
+| `lib/db.ts` | Neon + Drizzle DB connection |
+| `lib/schema.ts` | Database schema (Drizzle tables) |
+| `drizzle.config.ts` | Drizzle Kit configuration |
