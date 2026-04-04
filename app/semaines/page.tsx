@@ -2,6 +2,7 @@
 
 import { CustodyHero } from "@/components/common/custody-hero";
 import { DatePickerButton } from "@/components/ui/date-picker-button";
+import { familyConfig } from "@/lib/family-config";
 import { useScoped18n } from "@/lib/next-intl";
 import {
   getSchoolHolidayInfo,
@@ -13,8 +14,8 @@ import {
 import { useState } from "react";
 
 const gardeConfig = {
-  EVEN: { variant: "parent-a", role: "papa" },
-  ODD: { variant: "parent-b", role: "maman" },
+  EVEN: { variant: "parent-a", role: familyConfig.parentA },
+  ODD: { variant: "parent-b", role: familyConfig.parentB },
 } as const;
 
 const Page = () => {
@@ -54,7 +55,7 @@ const Page = () => {
 
       {/* Custody Hero - BIG and visible */}
       <CustodyHero
-        role={t(garde.role)}
+        role={garde.role}
         weekLabel={t("week-label", { type: t(weekType) })}
         weekDetail={t(`${weekType}-detail`)}
         subtitle={t("custody-subtitle")}
