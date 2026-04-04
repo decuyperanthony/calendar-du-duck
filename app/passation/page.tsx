@@ -27,6 +27,8 @@ const PassationList = ({
   const [checked, setChecked] = useState<Record<number, boolean>>({});
   const [newLabel, setNewLabel] = useState("");
   const [loading, setLoading] = useState(false);
+  const [editingId, setEditingId] = useState<number | null>(null);
+  const [editLabel, setEditLabel] = useState("");
 
   const toggleCheck = (id: number) => {
     setChecked((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -51,6 +53,25 @@ const PassationList = ({
     onRefresh();
   };
 
+  const startEdit = (item: PassationItem) => {
+    setEditingId(item.id);
+    setEditLabel(item.label);
+  };
+
+  const saveEdit = async (id: number) => {
+    const trimmed = editLabel.trim();
+    if (!trimmed) return;
+
+    await fetch(`/api/passation/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ label: trimmed }),
+    });
+    setEditingId(null);
+    setEditLabel("");
+    onRefresh();
+  };
+
   const deleteItem = async (id: number) => {
     await fetch(`/api/passation/${id}`, { method: "DELETE" });
     onRefresh();
@@ -61,20 +82,66 @@ const PassationList = ({
       <ul className="space-y-4">
         {items.map((item) => (
           <li key={item.id} className="flex items-center justify-between gap-2">
-            <CustomCheckbox
-              id={`passation__${item.id}`}
-              checked={checked[item.id] ?? false}
-              onCheckedChange={() => toggleCheck(item.id)}
-              label={item.label}
-            />
-            <Button
-              variant="ghost"
-              size="icon"
-              className="shrink-0 text-white/40 hover:text-red-400"
-              onClick={() => deleteItem(item.id)}
-            >
-              <Icon name="trash" size="sm" />
-            </Button>
+            {editingId === item.id ? (
+              <form
+                className="flex flex-1 gap-2"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  saveEdit(item.id);
+                }}
+              >
+                <Input
+                  value={editLabel}
+                  onChange={(e) => setEditLabel(e.target.value)}
+                  autoFocus
+                  className="flex-1"
+                />
+                <Button
+                  type="submit"
+                  size="icon"
+                  disabled={!editLabel.trim()}
+                  className="shrink-0"
+                >
+                  <Icon name="check-circle" size="sm" />
+                </Button>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  className="shrink-0 text-white/40"
+                  onClick={() => setEditingId(null)}
+                >
+                  <Icon name="alert-circle" size="sm" />
+                </Button>
+              </form>
+            ) : (
+              <>
+                <CustomCheckbox
+                  id={`passation__${item.id}`}
+                  checked={checked[item.id] ?? false}
+                  onCheckedChange={() => toggleCheck(item.id)}
+                  label={item.label}
+                />
+                <div className="flex shrink-0 gap-1">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-7 w-7 text-white/40 hover:text-white"
+                    onClick={() => startEdit(item)}
+                  >
+                    <Icon name="pencil" size="sm" />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-7 w-7 text-white/40 hover:text-red-400"
+                    onClick={() => deleteItem(item.id)}
+                  >
+                    <Icon name="trash" size="sm" />
+                  </Button>
+                </div>
+              </>
+            )}
           </li>
         ))}
       </ul>
