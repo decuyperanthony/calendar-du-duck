@@ -24,14 +24,20 @@ const PassationList = ({
   items: PassationItem[];
   onRefresh: () => void;
 }) => {
-  const [checked, setChecked] = useState<Record<number, boolean>>({});
   const [newLabel, setNewLabel] = useState("");
   const [loading, setLoading] = useState(false);
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editLabel, setEditLabel] = useState("");
 
-  const toggleCheck = (id: number) => {
-    setChecked((prev) => ({ ...prev, [id]: !prev[id] }));
+  const toggleCheck = async (item: PassationItem) => {
+    const newChecked = !item.isChecked;
+    // Optimistic update via parent refresh
+    await fetch(`/api/passation/${item.id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ isChecked: newChecked }),
+    });
+    onRefresh();
   };
 
   const addItem = async () => {
@@ -118,8 +124,8 @@ const PassationList = ({
               <>
                 <CustomCheckbox
                   id={`passation__${item.id}`}
-                  checked={checked[item.id] ?? false}
-                  onCheckedChange={() => toggleCheck(item.id)}
+                  checked={item.isChecked}
+                  onCheckedChange={() => toggleCheck(item)}
                   label={item.label}
                 />
                 <div className="flex shrink-0 gap-1">

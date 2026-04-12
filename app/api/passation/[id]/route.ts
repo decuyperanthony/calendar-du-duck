@@ -7,6 +7,7 @@ import { passationItems } from "@/lib/schema";
 
 const updateSchema = z.object({
   label: z.string().min(1).optional(),
+  isChecked: z.boolean().optional(),
   sortOrder: z.number().int().optional(),
 });
 
