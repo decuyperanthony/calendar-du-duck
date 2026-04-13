@@ -1,9 +1,17 @@
-import { integer, pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
+import {
+  boolean,
+  integer,
+  pgTable,
+  serial,
+  text,
+  timestamp,
+} from "drizzle-orm/pg-core";
 
 export const passationItems = pgTable("passation_items", {
   id: serial("id").primaryKey(),
   child: text("child").notNull(), // "child-a" | "child-b"
   label: text("label").notNull(),
+  isChecked: boolean("is_checked").notNull().default(false),
   sortOrder: integer("sort_order").notNull().default(0),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
