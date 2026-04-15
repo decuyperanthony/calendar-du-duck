@@ -28,7 +28,7 @@ const PassationList = ({
 }: {
   child: Child;
   items: PassationItem[];
-  onRefresh: () => void;
+  onRefresh: () => Promise<void>;
 }) => {
   const [newLabel, setNewLabel] = useState("");
   const [loading, setLoading] = useState(false);
@@ -53,7 +53,7 @@ const PassationList = ({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ isChecked: newChecked }),
       });
-      onRefresh();
+      await onRefresh();
     });
   };
 
