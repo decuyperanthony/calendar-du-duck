@@ -1,6 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useOptimistic,
+  useState,
+  useTransition,
+} from "react";
 
 import { CustomCheckbox } from "@/components/common/custom-checkbox";
 import { GenericTabs } from "@/components/common/generic-tabs";
@@ -22,22 +28,33 @@ const PassationList = ({
 }: {
   child: Child;
   items: PassationItem[];
-  onRefresh: () => void;
+  onRefresh: () => Promise<void>;
 }) => {
   const [newLabel, setNewLabel] = useState("");
   const [loading, setLoading] = useState(false);
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editLabel, setEditLabel] = useState("");
+  const [, startTransition] = useTransition();
 
-  const toggleCheck = async (item: PassationItem) => {
+  const [optimisticItems, applyOptimisticCheck] = useOptimistic(
+    items,
+    (current, patch: { id: number; isChecked: boolean }) =>
+      current.map((i) =>
+        i.id === patch.id ? { ...i, isChecked: patch.isChecked } : i,
+      ),
+  );
+
+  const toggleCheck = (item: PassationItem) => {
     const newChecked = !item.isChecked;
-    // Optimistic update via parent refresh
-    await fetch(`/api/passation/${item.id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ isChecked: newChecked }),
+    startTransition(async () => {
+      applyOptimisticCheck({ id: item.id, isChecked: newChecked });
+      await fetch(`/api/passation/${item.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ isChecked: newChecked }),
+      });
+      await onRefresh();
     });
-    onRefresh();
   };
 
   const addItem = async () => {
@@ -86,7 +103,7 @@ const PassationList = ({
   return (
     <SimpleCard>
       <ul className="space-y-4">
-        {items.map((item) => (
+        {optimisticItems.map((item) => (
           <li key={item.id} className="flex items-center justify-between gap-2">
             {editingId === item.id ? (
               <form
